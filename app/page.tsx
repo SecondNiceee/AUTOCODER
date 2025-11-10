@@ -20,7 +20,7 @@ export default function Home() {
           sizes="100vw"
         />
 
-        <div className="absolute inset-0 bg-black/60 z-2 left-0 top-0" />
+        <div className="absolute inset-0 bg-black/55 z-2 left-0 top-0" />
         <Header />
         <HeroSection />
       </div>
