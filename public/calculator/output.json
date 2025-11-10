@@ -1,0 +1,54 @@
+[
+  {
+    "brandId": "1",
+    "brandName": "BMW",
+    "models": [
+      {
+        "modelId": "1",
+        "modelName": "3 Series",
+        "years": [
+          {
+            "yearId": "1",
+            "yearName": "2020",
+            "engines": [
+              {
+                "id": "1",
+                "name": "320i 2.0T",
+                "fuelType": "Бензин",
+                "price": "500",
+                "staging": {
+                  "Stage 1": {
+                    "hp": {
+                      "current": "184",
+                      "tuned": "220",
+                      "increase": "36"
+                    },
+                    "nm": {
+                      "current": "300",
+                      "tuned": "350",
+                      "increase": "50"
+                    },
+                    "price": "500"
+                  },
+                  "Stage 2": {
+                    "hp": {
+                      "current": "184",
+                      "tuned": "250",
+                      "increase": "66"
+                    },
+                    "nm": {
+                      "current": "300",
+                      "tuned": "400",
+                      "increase": "100"
+                    },
+                    "price": "800"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
