@@ -1,25 +1,43 @@
 "use client"
 
-import { Phone, Instagram, MapPin } from "lucide-react"
+import { Phone, Instagram, MapPin } from 'lucide-react'
+import { useLanguage } from "@/components/language-context"
+import { t } from "@/lib/translations"
 
 export function MapSection() {
+  const { language } = useLanguage()
+
   return (
-    <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-black via-zinc-900 to-black">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(132,204,22,0.05),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(132,204,22,0.03),transparent_50%)]" />
+    <section id="contacts" className="relative py-4 sm:py-5 lg:py-6 overflow-hidden bg-gradient-to-br from-zinc-950 via-black to-zinc-900">
+      {/* Animated grid pattern background */}
+      <div className="absolute inset-0 opacity-20">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, oklch(0.65 0.18 130 / 0.1) 1px, transparent 1px),
+              linear-gradient(to bottom, oklch(0.65 0.18 130 / 0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: "60px 60px",
+          }}
+        />
+      </div>
+
+      {/* Glowing orbs for depth */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-[oklch(0.65_0.18_130)] rounded-full blur-[120px] opacity-20" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[oklch(0.65_0.18_130)] rounded-full blur-[140px] opacity-15" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2
-          className="text-center mb-8 sm:mb-12"
+          className="text-center text-lg sm:text-xl md:text-2xl mb-4 sm:mb-5"
           style={{
-            fontFamily: "Montserrat, sans-serif",
-            fontSize: "clamp(28px, 5vw, 48px)",
-            fontWeight: "700",
+            fontFamily: "Inter, sans-serif",
             color: "#ffffff",
             textTransform: "uppercase",
             letterSpacing: "0.05em",
           }}
         >
-          Контакты
+          {t("contacts_header", language)}
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
@@ -32,7 +50,7 @@ export function MapSection() {
                   <Phone className="w-6 h-6 text-lime-500" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-white font-montserrat font-semibold text-lg mb-2">Телефон</h3>
+                  <h3 className="text-white font-semibold text-lg mb-2">{t("phone_label", language)}</h3>
                   <a
                     href="tel:+48793058343"
                     className="text-lime-500 hover:text-lime-400 text-xl font-semibold block mb-2 transition-colors"
@@ -48,14 +66,6 @@ export function MapSection() {
                     >
                       WhatsApp
                     </a>
-                    <a
-                      href="https://t.me/+48793058343"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-lime-500/10 hover:bg-lime-500/20 text-lime-500 px-4 py-2 rounded text-sm transition-colors"
-                    >
-                      Telegram
-                    </a>
                   </div>
                 </div>
               </div>
@@ -68,7 +78,7 @@ export function MapSection() {
                   <Instagram className="w-6 h-6 text-lime-500" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-white font-montserrat font-semibold text-lg mb-2">Instagram</h3>
+                  <h3 className="text-white font-semibold text-lg mb-2">Instagram</h3>
                   <a
                     href="https://www.instagram.com/autocoder_pl/"
                     target="_blank"
@@ -88,7 +98,7 @@ export function MapSection() {
                   <MapPin className="w-6 h-6 text-lime-500" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-white font-montserrat font-semibold text-lg mb-2">Адрес</h3>
+                  <h3 className="text-white font-semibold text-lg mb-2">{t("address_label", language)}</h3>
                   <a
                     href="https://maps.app.goo.gl/DddQE9PReFShFQ1oj"
                     target="_blank"
@@ -98,12 +108,12 @@ export function MapSection() {
                     Poznań, Ożarowska 88
                   </a>
                   <a
-                    href="https://maps.app.goo.gl/DddQE9PReFShFQ1oj"
+                    href="https://www.google.com/search?sa=X&sca_esv=f5f7bfe5ec8d5861&hl=ru&authuser=0&biw=1366&bih=633&sxsrf=AE3TifMufRiYdy9QGlBN16HSdnL2Oou3hw:1762685437906&kgmid=/g/11ykm20hh2&q=Autocoder&shndl=30&shem=dafa,lcuae,uaasie,shrtsdl&source=sh/x/loc/uni/m1/1&kgs=945b1d1efe0373c1&utm_source=dafa,lcuae,uaasie,shrtsdl,sh/x/loc/uni/m1/1"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block mt-3 bg-lime-500 hover:bg-lime-600 text-black px-6 py-2 rounded font-semibold transition-colors"
                   >
-                    Открыть в Google Maps
+                    {t("open_in_google", language)}
                   </a>
                 </div>
               </div>

@@ -1,55 +1,29 @@
-import { Phone, MapPin, Instagram } from "lucide-react"
+"use client"
+
+import { Phone, Instagram } from 'lucide-react'
 import Image from "next/image"
+import Link from "next/link"
+import { useLanguage } from "@/components/language-context"
+import { t } from "@/lib/translations"
+import { MobileMenu } from "@/components/mobile-menu"
 
 export function Header() {
+  const { language, setLanguage } = useLanguage()
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <>
-      {/* Top Info Bar - Updated to use green theme instead of blue */}
-      <div
-        className="backdrop-blur-md border-b border-border/30 relative z-[20]"
-        style={{ backgroundColor: "oklch(0.35 0.10 130 / 0.7)" }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4 md:gap-[40px]">
-            <a
-              href="tel:+48793058343"
-              className="flex items-center gap-2 text-white hover:opacity-80 transition font-montserrat text-sm"
-              style={{ fontSize: "14px", fontFamily: "Montserrat, sans-serif", fontWeight: "400" }}
-            >
-              <Phone className="w-4 h-4 flex-shrink-0" />
-              <span className="whitespace-nowrap">+48793058343</span>
-            </a>
-            <a
-              href="https://www.instagram.com/autocoder_pl/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-white hover:opacity-80 transition font-montserrat text-sm"
-              style={{ fontSize: "14px", fontFamily: "Montserrat, sans-serif", fontWeight: "400" }}
-            >
-              <Instagram className="w-4 h-4 flex-shrink-0" />
-              <span className="hidden sm:inline">@autocoder_pl</span>
-              <span className="sm:hidden">Instagram</span>
-            </a>
-            <a
-              href="https://maps.app.goo.gl/DddQE9PReFShFQ1o9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-white hover:opacity-80 transition font-montserrat text-sm"
-            >
-              <MapPin className="w-4 h-4 flex-shrink-0" />
-              <span style={{ fontSize: "14px", fontFamily: "Montserrat, sans-serif", fontWeight: "400" }}>
-                Poznań, Ozarowska 88
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Header - Added backdrop-blur-md and mobile menu */}
-      <div className="bg-background/85 backdrop-blur-md border-b border-border sticky top-0 z-40">
+      {/* Main Header - Standalone without top bar */}
+      <header className="bg-black backdrop-blur-md border-b w-full border-border sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
+            <Link href="/" className="flex items-center hover:opacity-80 transition">
               <Image
                 src="/autocoder-logo.png"
                 alt="Autocoder Logo"
@@ -58,32 +32,63 @@ export function Header() {
                 className="h-7 w-auto"
                 priority
               />
-            </div>
+            </Link>
+
+            <MobileMenu />
 
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#" className="text-accent hover:text-accent/80 font-medium transition">
-                ГЛАВНАЯ
-              </a>
-              <a href="#" className="text-foreground hover:text-accent font-medium transition">
-                УСЛУГИ
-              </a>
-              <a href="#" className="text-foreground hover:text-accent font-medium transition">
-                КОНТАКТЫ
-              </a>
+              <button onClick={() => scrollToSection('hero')} className="text-accent hover:text-accent/80 font-medium transition cursor-pointer">
+                {t("home", language)}
+              </button>
+              <button onClick={() => scrollToSection('services')} className="text-foreground hover:text-accent font-medium transition cursor-pointer">
+                {t("services", language)}
+              </button>
+              <button onClick={() => scrollToSection('contacts')} className="text-foreground hover:text-accent font-medium transition cursor-pointer">
+                {t("contacts", language)}
+              </button>
             </nav>
 
-            <div className="flex items-center gap-3 px-4 py-2 bg-zinc-900 rounded-lg border border-zinc-800 w-[175px] justify-center hover:border-accent transition-colors">
-              <a href="#" className="text-foreground hover:text-accent text-sm font-medium transition">
-                PL
+            <div className="hidden md:flex items-center gap-4">
+              <a
+                href="tel:+48793058343"
+                className="hidden lg:flex items-center gap-2 text-foreground/80 hover:text-accent transition text-sm"
+              >
+                <Phone className="w-4 h-4" />
+                <span>+48793058343</span>
               </a>
-              <span className="text-foreground text-sm">|</span>
-              <a href="#" className="text-foreground hover:text-accent text-sm font-medium transition">
-                RU
+
+              <a
+                href="https://www.instagram.com/autocoder_pl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/80 hover:text-accent transition"
+              >
+                <Instagram className="w-5 h-5" />
               </a>
+
+              <div className="flex items-center gap-3 px-4 py-2 bg-zinc-900 rounded-lg border border-zinc-800 hover:border-accent transition-colors">
+                <button
+                  onClick={() => setLanguage("pl")}
+                  className={`text-sm font-medium transition cursor-pointer ${
+                    language === "pl" ? "text-accent" : "text-foreground hover:text-accent"
+                  }`}
+                >
+                  PL
+                </button>
+                <span className="text-foreground text-sm">|</span>
+                <button
+                  onClick={() => setLanguage("ru")}
+                  className={`text-sm font-medium transition cursor-pointer ${
+                    language === "ru" ? "text-accent" : "text-foreground hover:text-accent"
+                  }`}
+                >
+                  RU
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </header>
     </>
   )
 }

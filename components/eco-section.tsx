@@ -27,7 +27,6 @@ export function EcoSection() {
         <h2
           className="text-center text-white mb-8 sm:mb-12 md:mb-16 px-4"
           style={{
-            fontFamily: "Montserrat, sans-serif",
             fontSize: "clamp(24px, 5vw, 32px)",
             fontWeight: "700",
             textTransform: "uppercase",
@@ -56,7 +55,6 @@ export function EcoSection() {
               <h3
                 className="text-[oklch(0.65_0.18_130)] mb-3 transition-colors"
                 style={{
-                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "clamp(18px, 3vw, 22px)",
                   fontWeight: "700",
                   textTransform: "uppercase",
@@ -70,7 +68,6 @@ export function EcoSection() {
               <p
                 className="text-gray-400 transition-colors group-hover:text-gray-300"
                 style={{
-                  fontFamily: "Montserrat, sans-serif",
                   fontSize: "clamp(14px, 2.5vw, 16px)",
                   lineHeight: "1.5",
                 }}

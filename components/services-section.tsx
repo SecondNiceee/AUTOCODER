@@ -1,54 +1,71 @@
+"use client"
+
+import Link from "next/link"
+import { useLanguage } from "@/components/language-context"
+import { t } from "@/lib/translations"
+
 export function ServicesSection() {
+  const { language } = useLanguage()
+
   const services = [
     {
       id: 1,
-      title: "ЧИП ТЮНИНГ",
+      title_key: "chip_tuning" as const,
       icon: "/cheap-tuning.jpg",
+      href: "/chip-tuning",
     },
     {
       id: 2,
-      title: "ЭКОЛОГИЯ",
+      title_key: "ecology" as const,
       icon: "/ecology.jpg",
+      href: "/ecology",
     },
     {
       id: 3,
-      title: "ДИАГНОСТИКА",
-      icon: "/diagnostic.jpg",  
+      title_key: "diagnostics" as const,
+      icon: "/diagnostic.jpg",
+      href: "/diagnostics",
     },
     {
       id: 4,
-      title: "РЕМОНТ ЭЛЕКТРОНИКИ",
+      title_key: "repair_electronics" as const,
       icon: "/remont.jpg",
+      href: "/repair",
     },
     {
       id: 5,
-      title: "ДОСНАЩЕНИЕ (RETROFIT)",
+      title_key: "retrofit" as const,
       icon: "/additional-equipment.jpg",
+      href: "/retrofit",
     },
     {
       id: 6,
-      title: "КОНВЕРСИЯ / USA-EU",
+      title_key: "conversion" as const,
       icon: "/conversion.jpg",
+      href: "/conversion",
     },
     {
       id: 7,
-      title: "КОДИРОВАНИЕ И ПРОГРАММИРОВАНИЕ",
+      title_key: "coding" as const,
       icon: "/coding.jpg",
+      href: "/coding",
     },
     {
       id: 8,
-      title: "КЛЮЧИ / ИММОБИЛАЙЗЕРЫ",
+      title_key: "immobilizer" as const,
       icon: "/keys.jpg",
+      href: "/immobilizer",
     },
     {
       id: 9,
-      title: "SWAP",
-      icon: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/swap-AqyApylnXd6BvxJ6s1YMA2pSsh7h2D.jpg",
+      title_key: "swap" as const,
+      icon: "/swap.jpg",
+      href: "/swap",
     },
   ]
 
   return (
-    <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden bg-gradient-to-br from-zinc-950 via-black to-zinc-900">
+    <section id="services" className="relative py-8 sm:py-10 md:py-12 overflow-hidden bg-white">
       {/* Animated grid pattern background */}
       <div className="absolute inset-0 opacity-20">
         <div
@@ -69,72 +86,80 @@ export function ServicesSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2
-          className="text-center mb-8 sm:mb-12 md:mb-16 px-4 text-white"
+          className="text-center mb-6 sm:mb-8 md:mb-10 px-4 text-black section-fade-in"
           style={{
-            fontFamily: "Montserrat, sans-serif",
-            fontSize: "clamp(28px, 5vw, 40px)",
+            fontSize: "clamp(24px, 4vw, 32px)",
             fontWeight: "700",
             textTransform: "uppercase",
             lineHeight: "1.3",
           }}
         >
-          УСЛУГИ:
+          {t("our_services", language)}
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="group cursor-pointer flex flex-col items-center text-center p-8 rounded-2xl 
-                         bg-gradient-to-br from-zinc-900/80 to-black/60 
-                         backdrop-blur-sm
-                         border border-zinc-800/50
-                         hover:border-[oklch(0.65_0.18_130)]
-                         hover:shadow-[0_0_40px_-10px_oklch(0.65_0.18_130)]
-                         transition-all duration-500 
-                         hover:-translate-y-3
-                         hover:scale-[1.02]
-                         relative overflow-hidden"
-            >
-              {/* Shine effect on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.65_0.18_130)]/0 via-[oklch(0.65_0.18_130)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-              {/* Corner accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-[oklch(0.65_0.18_130)]/10 blur-2xl rounded-full -translate-y-10 translate-x-10 group-hover:translate-x-5 group-hover:-translate-y-5 transition-transform duration-500" />
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+          {services.map((service) => {
+            const ServiceCard = (
               <div
-                className="mb-6 w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center relative z-10 
-                            rounded-xl overflow-hidden
-                            ring-2 ring-zinc-700/80 group-hover:ring-[oklch(0.65_0.18_130)] 
-                            transition-all duration-500
-                            shadow-lg group-hover:shadow-[0_0_30px_-5px_oklch(0.65_0.18_130)]
-                          bg-black p-3"
+                key={service.id}
+                className="group cursor-pointer flex flex-col items-center text-center p-5 rounded-2xl 
+                           bg-black
+                           backdrop-blur-sm
+                           border border-zinc-800/50
+                           hover:border-[oklch(0.65_0.18_130)]
+                           hover:shadow-[0_0_40px_-10px_oklch(0.65_0.18_130)]
+                           transition-all duration-500 
+                           hover:-translate-y-3
+                           hover:scale-[1.02]
+                           relative overflow-hidden stagger-item"
               >
-                <img
-                  src={service.icon || "/placeholder.svg"}
-                  alt={service.title}
-                  className="w-full h-full object-contain relative z-10 group-hover:scale-110 transition-transform duration-500"
-                />
+                {/* Shine effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.65_0.18_130)]/0 via-[oklch(0.65_0.18_130)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-[oklch(0.65_0.18_130)]/10 blur-2xl rounded-full -translate-y-10 translate-x-10 group-hover:translate-x-5 group-hover:-translate-y-5 transition-transform duration-500" />
+
+                <div
+                  className="mb-4 w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center relative z-10 
+                              rounded-xl overflow-hidden
+                              ring-2 ring-zinc-700/80 group-hover:ring-[oklch(0.65_0.18_130)] 
+                              transition-all duration-500
+                              shadow-lg group-hover:shadow-[0_0_30px_-5px_oklch(0.65_0.18_130)]
+                            bg-black p-2"
+                >
+                  <img
+                    src={service.icon || "/placeholder.svg"}
+                    alt={service.title_key}
+                    className="w-full h-full object-contain relative z-10 group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+
+                <h3
+                  className="text-white group-hover:text-[oklch(0.65_0.18_130)] transition-colors duration-300 relative z-10"
+                  style={{
+                    fontSize: "clamp(14px, 2.5vw, 16px)",
+                    fontWeight: "700",
+                    textTransform: "uppercase",
+                    lineHeight: "1.3",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  {t(service.title_key, language)}
+                </h3>
+
+                {/* Subtle bottom accent line */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[oklch(0.65_0.18_130)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
+            )
 
-              <h3
-                className="text-white group-hover:text-[oklch(0.65_0.18_130)] transition-colors duration-300 relative z-10"
-                style={{
-                  fontFamily: "Montserrat, sans-serif",
-                  fontSize: "clamp(16px, 3vw, 18px)",
-                  fontWeight: "700",
-                  textTransform: "uppercase",
-                  lineHeight: "1.4",
-                  letterSpacing: "0.02em",
-                }}
-              >
-                {service.title}
-              </h3>
-
-              {/* Subtle bottom accent line */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[oklch(0.65_0.18_130)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </div>
-          ))}
+            return service.href ? (
+              <Link key={service.id} href={service.href}>
+                {ServiceCard}
+              </Link>
+            ) : (
+              ServiceCard
+            )
+          })}
         </div>
       </div>
     </section>
