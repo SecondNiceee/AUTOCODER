@@ -6,7 +6,7 @@ import { MapSection } from "@/components/map-section"
 import { Footer } from "@/components/footer"
 import Image from "next/image"
 
-export default function Home() {
+export default function PlHome() {
   return (
     <main className="bg-background">
       <div className="relative">

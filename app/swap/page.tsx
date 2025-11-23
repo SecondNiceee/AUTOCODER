@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import SwapContent from "./swap-content"
+import SwapClientPage from "./SwapClientPage"
 
 export const metadata: Metadata = {
   title: "Swap Silnika i Skrzyni Biegów | OM606, M57, 7G-Tronic",
@@ -16,20 +16,17 @@ export const metadata: Metadata = {
     "8HP",
     "swap Mercedes",
     "swap BMW",
-    "свап двигателя",
-    "modyfikacje mechaniczne",
   ],
   openGraph: {
     title: "Swap Silnika i Skrzyni Biegów | OM606, M57 | Autocoder Poznań",
     description: "Swap silnika i skrzyni biegów Mercedes, BMW, VAG. OM606, OM648, M57, 7G-Tronic, 8HP.",
-    url: `${SITE_URL}/swap`,
-    type: "website",
+    url: `${SITE_URL}/pl/swap`,
   },
   alternates: {
-    canonical: `${SITE_URL}/swap`,
+    canonical: `${SITE_URL}/pl/swap`,
   },
 }
 
 export default function SwapPage() {
-  return <SwapContent />
+  return <SwapClientPage />
 }

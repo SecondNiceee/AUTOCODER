@@ -5,14 +5,14 @@ export const translations = {
     services: "УСЛУГИ",
     contacts: "КОНТАКТЫ",
     experience: "15 лет опыта",
-    
+
     // Hero Section
     electronics: "Электроника автомобилей Mercedes (Maybach, Smart)",
     brands: "BMW (Mini, Rolls-Royce), VAG (Audi, VW, Porsche, Bentley)",
     services_list: "Чиптюнинг • Экология • Дооснащение • Ретрофит •",
     services_list_2: "Диагностика • Ремонт автомобильной электроники •",
     services_list_3: "Кодирование • Программирование • Конверсия • Свап",
-    
+
     // Services Section
     our_services: "УСЛУГИ:",
     chip_tuning: "ЧИП ТЮНИНГ",
@@ -24,7 +24,7 @@ export const translations = {
     coding: "КОДИРОВАНИЕ И ПРОГРАММИРОВАНИЕ",
     immobilizer: "КЛЮЧИ / ИММОБИЛАЙЗЕРЫ",
     swap: "SWAP",
-    
+
     // Calculator
     calculator_title: "Узнайте возможности вашей машины. STAGE 1",
     select_brand: "Выберите марку",
@@ -36,8 +36,9 @@ export const translations = {
     torque: "Крутящий момент",
     hp: "л.с.",
     nm: "Нм",
-    results_note: "* Реальные результаты могут отличаться от заявленных, исходя из температуры, топлива и состояния конкретной машины.",
-    
+    results_note:
+      "* Реальные результаты могут отличаться от заявленных, исходя из температуры, топлива и состояния конкретной машины.",
+
     // Reviews Section
     our_reviews: "Отзывы наших клиентов",
     reviews_subtitle: "Откройте для себя, почему нас выбирают лучшие владельцы немецких автомобилей",
@@ -46,74 +47,107 @@ export const translations = {
     review_counter: "из",
     google_reviews: "Посмотреть все отзывы на Google",
     customers_count: "Более 100+ довольных клиентов AUTOCODER",
-    
+
     // Footer
     services_header: "Услуги",
     contacts_header: "Контакты",
     address_header: "Адрес",
     all_rights: "© 2025 Autocoder. Все права защищены.",
     whatsapp: "WhatsApp",
-    
+
     // Service Pages
     back_to_services: "Назад к услугам",
     phone_label: "Телефон",
     address_label: "Адрес",
     open_in_google: "Открыть в Google",
-    
+
     // Service Pages - Chip Tuning
-    chip_tuning_intro: "Чип-тюнинг — это программное изменение настроек электронного блока управления (ЭБУ) двигателя автомобиля, который можно назвать «мозгом» двигателя.",
-    chip_tuning_p1: "Это программирование (перепрошивка) этого «мозга» с целью заставить его работать иначе — мощнее и эффективнее.",
-    chip_tuning_p2: "Заводские настройки в автомобиле — это всегда баланс между мощностью, экономичностью, долговечностью и экологическими нормами. Чип-тюнинг снимает часть этих ограничений.",
-    chip_tuning_p3: "Основная цель чип-тюнинга — увеличить мощность и крутящий момент двигателя. После чип-тюнинга машина становится «отзывчивее», легче и быстрее ускоряется.",
+    chip_tuning_intro:
+      "Чип-тюнинг — это программное изменение настроек электронного блока управления (ЭБУ) двигателя автомобиля, который можно назвать «мозгом» двигателя.",
+    chip_tuning_what_is_it: "Что такое чип-тюнинг?",
+    chip_tuning_benefits_heading: "Преимущества чип-тюнинга",
+    chip_tuning_p1:
+      "Это программирование (перепрошивка) этого «мозга» с целью заставить его работать иначе — мощнее и эффективнее.",
+    chip_tuning_p2:
+      "Заводские настройки в автомобиле — это всегда баланс между мощностью, экономичностью, долговечностью и экологическими нормами. Чип-тюнинг снимает часть этих ограничений.",
+    chip_tuning_p3:
+      "Основная цель чип-тюнинга — увеличить мощность и крутящий момент двигателя. После чип-тюнинга машина становится «отзывчивее», легче и быстрее ускоряется.",
     chip_tuning_examples_title: "Примеры маркетинговых различий",
-    chip_tuning_examples_intro: "В некоторых случаях завод-изготовитель продаёт один и тот же автомобиль с тем же двигателем под другим обозначением. Это связано исключительно с маркетингом.",
-    chip_tuning_example1: "Mercedes Vito W447 с мотором OM651 существует в трёх обозначениях — 114d (136hp), 116d (163hp), 119d (190hp). При этом мотор один и тот же.",
-    chip_tuning_example2: "Mercedes Vito W639 с мотором OM646 — в трёх модификациях 109d (89hp), 111d (110hp), 115d (150hp). При этом по железу данные авто идентичны.",
+    chip_tuning_examples_intro:
+      "В некоторых случаях завод-изготовитель продаёт один и тот же автомобиль с тем же двигателем под другим обозначением. Это связано исключительно с маркетингом.",
+    chip_tuning_example1:
+      "Mercedes Vito W447 с мотором OM651 существует в трёх обозначениях — 114d (136hp), 116d (163hp), 119d (190hp). При этом мотор один и тот же.",
+    chip_tuning_example2:
+      "Mercedes Vito W639 с мотором OM646 — в трёх модификациях 109d (89hp), 111d (110hp), 115d (150hp). При этом по железу данные авто идентичны.",
     chip_tuning_similar: "Такие же примеры встречаются и у других автопроизводителей.",
-    chip_tuning_reveal: "Для владельца автомобиля с таким же мотором, но «задушенной» прошивкой, чип-тюнинг наиболее ярко раскрывает потенциал двигателя.",
+    chip_tuning_reveal:
+      "Для владельца автомобиля с таким же мотором, но «задушенной» прошивкой, чип-тюнинг наиболее ярко раскрывает потенциал двигателя.",
     chip_tuning_advantages_title: "Ключевые преимущества",
-    chip_tuning_adv1: "В каждом автомобиле прирост индивидуален. Он зависит от возможностей двигателя и бюджета заказчика.",
-    chip_tuning_adv2: "Stage 1 (исключительно программная работа, без физических изменений в конструкции двигателя) является самым оптимальным и бюджетным вариантом для абсолютного большинства автовладельцев.",
+    chip_tuning_adv1:
+      "В каждом автомобиле прирост индивидуален. Он зависит от возможностей двигателя и бюджета заказчика.",
+    chip_tuning_adv2:
+      "Stage 1 (исключительно программная работа, без физических изменений в конструкции двигателя) является самым оптимальным и бюджетным вариантом для абсолютного большинства автовладельцев.",
     chip_tuning_adv3: "Чип-тюнинг особенно эффективен на турбированных и компрессорных двигателях.",
-    chip_tuning_adv4: "В некоторых случаях возможно уменьшение расхода топлива — в зависимости от состояния топливной системы.",
+    chip_tuning_adv4:
+      "В некоторых случаях возможно уменьшение расхода топлива — в зависимости от состояния топливной системы.",
     chip_tuning_adv5: "Также при чип-тюнинге можно убрать программные ограничения по мощности и скорости.",
-    chip_tuning_safety: "Квалифицированный чип-тюнинг не вредит мотору. Естественный износ зависит от условий эксплуатации.",
-    chip_tuning_warning: "Разумеется, при некачественном чип-тюнинге можно повредить двигатель и его внешние компоненты.",
+    chip_tuning_safety:
+      "Квалифицированный чип-тюнинг не вредит мотору. Естественный износ зависит от условий эксплуатации.",
+    chip_tuning_warning:
+      "Разумеется, при некачественном чип-тюнинге можно повредить двигатель и его внешние компоненты.",
     chip_tuning_decision: "О необходимости чип-тюнинга владелец автомобиля должен принимать решение самостоятельно.",
-    
+
     // Coding Page
     coding_title: "Кодирование и программирование",
-    coding_intro1: "Каждый электронный блок управления в автомобиле имеет свои функции и собственное программное обеспечение.",
-    coding_intro2: "Завод-изготовитель может выпускать один и тот же блок с разными версиями прошивок — в зависимости от модели, комплектации и рынка.",
-    coding_intro3: "Также один и тот же блок может работать по-разному, в зависимости от задач и настроек пользователя.",
+    coding_intro1:
+      "Каждый электронный блок управления в автомобиле имеет свои функции и собственное программное обеспечение.",
+    coding_intro2:
+      "Завод-изготовитель может выпускать один и тот же блок с разными версиями прошивок — в зависимости от модели, комплектации и рынка.",
+    coding_intro3:
+      "Также один и тот же блок может работать по-разному, в зависимости от задач и настроек пользователя.",
     programming_title: "Программирование",
-    programming_intro: "Программирование — это обновление, смена или восстановление программного обеспечения блока управления с различными целями.",
+    programming_intro:
+      "Программирование — это обновление, смена или восстановление программного обеспечения блока управления с различными целями.",
     programming_1_title: "1. Улучшение функционала",
-    programming_1_text: "Новое программное обеспечение может добавлять возможности, улучшать работу систем или устранять недоработки предыдущих версий.",
+    programming_1_text:
+      "Новое программное обеспечение может добавлять возможности, улучшать работу систем или устранять недоработки предыдущих версий.",
     programming_2_title: "2. Адаптация под другой автомобиль",
     programming_2_text: "Иногда требуется запрограммировать блок с одного автомобиля под другой.",
-    programming_2_example: "Например, блок управления коробкой может быть одинаковым для разных двигателей, но для каждого двигателя используется своя программа.",
+    programming_2_example:
+      "Например, блок управления коробкой может быть одинаковым для разных двигателей, но для каждого двигателя используется своя программа.",
     programming_3_title: "3. Восстановление после сбоев",
-    programming_3_text1: "Программное обеспечение может выйти из строя из-за разряда аккумулятора, сбоев других блоков или физических повреждений.",
-    programming_3_text2: "В таких случаях блок перестаёт выполнять свои функции, и для восстановления его работы требуется перепрограммирование.",
-    programming_3_example: "Иногда нужно вернуть заводскую прошивку после неквалифицированного вмешательства — восстановить всё так, как было задумано производителем.",
+    programming_3_text1:
+      "Программное обеспечение может выйти из строя из-за разряда аккумулятора, сбоев других блоков или физических повреждений.",
+    programming_3_text2:
+      "В таких случаях блок перестаёт выполнять свои функции, и для восстановления его работы требуется перепрограммирование.",
+    programming_3_example:
+      "Иногда нужно вернуть заводскую прошивку после неквалифицированного вмешательства — восстановить всё так, как было задумано производителем.",
     coding_section_title: "Кодирование",
-    coding_intro: "Кодирование позволяет активировать или деактивировать функции и режимы, заложенные в блок управления, в зависимости от пожеланий владельца или условий эксплуатации.",
+    coding_intro:
+      "Кодирование позволяет активировать или деактивировать функции и режимы, заложенные в блок управления, в зависимости от пожеланий владельца или условий эксплуатации.",
     coding_examples_title: "Примеры:",
     coding_ex1: "включение или отключение функции старт-стоп;",
     coding_ex2: "активация или деактивация напоминания о ремне безопасности;",
     coding_ex3: "автоматическое включение фар.",
     coding_sync1: "Иногда кодирование требуется для согласования работы нескольких блоков между собой.",
-    coding_sync2: "Например, при активации круиз-контроля изменения вносятся сразу в несколько блоков, или при установке блока управления двигателем с механики на АКПП требуется перекодировка.",
-    coding_sync3: "При дооснащении автомобиля новой опцией важно не только установить оборудование, но и закодировать соответствующий блок.",
-    coding_sync4: "Например, после установки камеры заднего вида нужно закодировать мультимедиа, чтобы она «знала» об этой функции и отображала изображение.",
-    coding_extra: "Также кодирование используется для активации дополнительных функций, не включённых заводом по умолчанию — таких как закрытие стёкол с ключа или активация AMG-меню приборной панели (для автомобилей Mercedes).",
-    
+    coding_sync2:
+      "Например, при активации круиз-контроля изменения вносятся сразу в несколько блоков, или при установке блока управления двигателем с механики на АКПП требуется перекодировка.",
+    coding_sync3:
+      "При дооснащении автомобиля новой опцией важно не только установить оборудование, но и закодировать соответствующий блок.",
+    coding_sync4:
+      "Например, после установки камеры заднего вида нужно закодировать мультимедиа, чтобы она «знала» об этой функции и отображала изображение.",
+    coding_extra:
+      "Также кодирование используется для активации дополнительных функций, не включённых заводом по умолчанию — таких как закрытие стёкол с ключа или активация AMG-меню приборной панели (для автомобилей Mercedes).",
+
     // Conversion Page
     conversion_title: "Конверсия",
     conversion_intro1: "В современных автомобилях большинство функций управляется программным обеспечением.",
-    conversion_intro2: "Навигация, голосовое управление, мультимедиа, климат-контроль, блоки управления двигателем и ассистенты водителя — всё это зависит от прошивок и конфигурации, которые различаются в зависимости от рынка, на который изначально была выпущена машина.",
+    conversion_intro2:
+      "Навигация, голосовое управление, мультимедиа, климат-контроль, блоки управления двигателем и ассистенты водителя — всё это зависит от прошивок и конфигурации, которые различаются в зависимости от рынка, на который изначально была выпущена машина.",
     conversion_definition: "Конверсия — это адаптация автомобиля из США под европейский рынок.",
+    conversion_what_included: "Что входит в конверсию?",
+    conversion_process_title: "Процесс конверсии",
+    conversion_why_us_title: "Почему выбирают нас?",
     conversion_includes: "Обычно включает:",
     conversion_1: "кодирование и программирование блоков управления для перевода на европейские единицы измерения;",
     conversion_2: "изменение радиочастот;",
@@ -122,14 +156,22 @@ export const translations = {
     conversion_5: "доработку электропроводки под фары и фонари;",
     conversion_6: "установку европейской оптики;",
     conversion_7: "замену шкалы спидометра.",
-    conversion_support: "Большинство автомобилей из США изначально не имеют поддержки европейских стандартов и языков интерфейса.",
-    conversion_expertise: "Поэтому адаптация таких авто требует опыта работы с электронными блоками и профессионального оборудования, чтобы все системы корректно функционировали в европейских условиях.",
+    conversion_support:
+      "Большинство автомобилей из США изначально не имеют поддержки европейских стандартов и языков интерфейса.",
+    conversion_expertise:
+      "Поэтому адаптация таких авто требует опыта работы с электронными блоками и профессионального оборудования, чтобы все системы корректно функционировали в европейских условиях.",
     conversion_price: "Стоимость начинается от 200 злотых",
-    
+
     // Ecology Page
     ecology_title: "ЭКО (Экологические системы)",
-    ecology_intro1: "В современных автомобилях с каждым годом становится всё больше экологических систем. Внедрение каждой новой системы в современном автомобиле продиктовано необходимостью выполнения жёстких экологических стандартов.",
-    ecology_intro2: "Разные поколения автомобилей имеют разные экологические нормы — ЕВРО2 / ЕВРО3 / ЕВРО4 / ЕВРО5 / ЕВРО6.",
+    ecology_intro1:
+      "В современных автомобилях с каждым годом становится всё больше экологических систем. Внедрение каждой новой системы в современном автомобиле продиктовано необходимостью выполнения жёстких экологических стандартов.",
+    ecology_intro2:
+      "Разные поколения автомобилей имеют разные экологические нормы — ЕВРО2 / ЕВРО3 / ЕВРО4 / ЕВРО5 / ЕВРО6.",
+    ecology_standards_title: "Экологические стандарты",
+    ecology_components_title: "Компоненты экологических систем",
+    ecology_problems_title: "Типичные проблемы",
+    ecology_solutions_title: "Наши решения",
     ecology_euro6: "ЕВРО6 — AdBlue",
     ecology_euro4: "ЕВРО4 — сажевый фильтр",
     ecology_euro3: "ЕВРО3 — катализатор",
@@ -139,47 +181,70 @@ export const translations = {
     ecology_comp3: "катализатор (лямбда-зонды, система продувки катализатора),",
     ecology_comp4: "EGR (высокого и низкого давления, теплообменник EGR),",
     ecology_comp5: "вихревые заслонки.",
-    ecology_failure: "Любой из этих компонентов может выйти из строя, что приведёт к поломке автомобиля или даже запрету возможности движения.",
-    ecology_adblue: "Например, при поломке системы AdBlue включается счётчик количества километров, после которого запуск автомобиля станет невозможен — активируется блокировка запуска.",
-    ecology_dpf: "В случае с сажевым фильтром автомобиль иногда продолжает включать неуспешные регенерации, что может привести к поломке мотора из-за избыточного уровня масла в поддоне (дизельное топливо попадает в мотор при неполной регенерации DPF).",
+    ecology_failure:
+      "Любой из этих компонентов может выйти из строя, что приведёт к поломке автомобиля или даже запрету возможности движения.",
+    ecology_adblue:
+      "Например, при поломке системы AdBlue включается счётчик количества километров, после которого запуск автомобиля станет невозможен — активируется блокировка запуска.",
+    ecology_dpf:
+      "В случае с сажевым фильтром автомобиль иногда продолжает включать неуспешные регенерации, что может привести к поломке мотора из-за избыточного уровня масла в поддоне (дизельное топливо попадает в мотор при неполной регенерации DPF).",
     ecology_experience: "Имеем богатый опыт устранения поломок любых экологических систем.",
-    ecology_expertise: "Успешно решаем проблемы данного вида даже в тех случаях, когда уже было произведено вмешательство неквалифицированными специалистами.",
-    ecology_equipment: "Имеем всё необходимое оборудование для восстановления заводского ПО блока управления двигателем любых немецких автомобилей.",
-    
+    ecology_expertise:
+      "Успешно решаем проблемы данного вида даже в тех случаях, когда уже было произведено вмешательство неквалифицированными специалистами.",
+    ecology_equipment:
+      "Имеем всё необходимое оборудование для восстановления заводского ПО блока управления двигателем любых немецких автомобилей.",
+
     // Immobilizer Page
     immobilizer_title: "Иммобилайзер",
-    immobilizer_intro1: "Иммобилайзер — система, которая блокирует запуск автомобиля в случае отсутствия ключа, подходящего данному автомобилю.",
+    immobilizer_intro1:
+      "Иммобилайзер — система, которая блокирует запуск автомобиля в случае отсутствия ключа, подходящего данному автомобилю.",
     immobilizer_intro2: "Данная система присутствует на всех автомобилях примерно с середины 90-х годов.",
-    immobilizer_intro3: "Основная функция иммобилайзера — предотвратить угон. Иногда противоугонная система может стать препятствием для запуска автомобиля.",
+    immobilizer_intro3:
+      "Основная функция иммобилайзера — предотвратить угон. Иногда противоугонная система может стать препятствием для запуска автомобиля.",
+    immobilizer_what_is: "Что такое иммобилайзер?",
+    immobilizer_services_title: "Наши услуги",
+    immobilizer_how_we_help: "Как мы помогаем?",
     immobilizer_problems_title: "Проблемы с иммобилайзером можно разделить на две группы:",
     immobilizer_prob1_title: "Утеря или поломка «родного» ключа",
-    immobilizer_prob1_text: "Это «нормальная» неисправность, предусмотренная заводом-изготовителем, для блокировки пуска двигателя без подходящего электронного ключа.",
+    immobilizer_prob1_text:
+      "Это «нормальная» неисправность, предусмотренная заводом-изготовителем, для блокировки пуска двигателя без подходящего электронного ключа.",
     immobilizer_prob2_title: "Косвенные неисправности других электронных блоков",
-    immobilizer_prob2_text1: "Косвенные неисправности других электронных блоков, связанных в комплекс противоугонной системы.",
-    immobilizer_prob2_text2: "К данным блокам могут относиться: блок управления двигателем, блок управления коробкой передач, блок санкционирования доступа, приборная панель, рулевая защёлка, электронный замок зажигания, электронный селектор АКПП.",
-    immobilizer_prob2_text3: "При выходе из строя одного из этих блоков полностью блокируется запуск или движение автомобиля.",
-    immobilizer_expertise: "Не только изготавливаем ключи для немецких автомобилей, но и быстро определяем и квалифицированно решаем проблемы в других электронных блоках, связанных с противоугонной системой автомобиля.",
-    
+    immobilizer_prob2_text1:
+      "Косвенные неисправности других электронных блоков, связанных в комплекс противоугонной системы.",
+    immobilizer_prob2_text2:
+      "К данным блокам могут относиться: блок управления двигателем, блок управления коробкой передач, блок санкционирования доступа, приборная панель, рулевая защёлка, электронный замок зажигания, электронный селектор АКПП.",
+    immobilizer_prob2_text3:
+      "При выходе из строя одного из этих блоков полностью блокируется запуск или движение автомобиля.",
+    immobilizer_expertise:
+      "Не только изготавливаем ключи для немецких автомобилей, но и быстро определяем и квалифицированно решаем проблемы в других электронных блоках, связанных с противоугонной системой автомобиля.",
+
     // Repair Page
     repair_title: "Ремонт электроники",
-    repair_intro1: "Современный автомобиль не может функционировать без электроники. Чем новее и технически сложнее автомобиль, тем больше в нём электронных систем.",
-    repair_intro2: "За различные функции отвечают отдельные блоки управления. В современных немецких автомобилях представительского класса может быть до 200 электронных блоков.",
+    repair_intro1:
+      "Современный автомобиль не может функционировать без электроники. Чем новее и технически сложнее автомобиль, тем больше в нём электронных систем.",
+    repair_intro2:
+      "За различные функции отвечают отдельные блоки управления. В современных немецких автомобилях представительского класса может быть до 200 электронных блоков.",
     repair_intro3: "Каждый блок имеет свои задачи.",
-    repair_intro4: "Каждый блок управления — это, по сути, компьютер со своей операционной средой, который иногда превосходит по количеству компонентов современный ноутбук или телефон.",
+    repair_intro4:
+      "Каждый блок управления — это, по сути, компьютер со своей операционной средой, который иногда превосходит по количеству компонентов современный ноутбук или телефон.",
     repair_intro5: "Как и любая бытовая электроника, автомобильная электроника может выходить из строя.",
     repair_types_title: "Поломки бывают двух типов:",
     repair_type1_title: "Физические",
-    repair_type1_text: "Возникают из-за усталости компонентов, внешних воздействий (вода, короткое замыкание, грязь, физический удар).",
+    repair_type1_text:
+      "Возникают из-за усталости компонентов, внешних воздействий (вода, короткое замыкание, грязь, физический удар).",
     repair_type2_title: "Программные",
-    repair_type2_text: "Появляются вследствие сбоев в работе электронных блоков, неквалифицированного вмешательства или проблем с питанием.",
-    repair_diagnosis: "После подобных повреждений, чтобы автомобиль снова функционировал корректно, требуется провести качественную диагностику и ремонт электронного блока.",
+    repair_type2_text:
+      "Появляются вследствие сбоев в работе электронных блоков, неквалифицированного вмешательства или проблем с питанием.",
+    repair_diagnosis:
+      "После подобных повреждений, чтобы автомобиль снова функционировал корректно, требуется провести качественную диагностику и ремонт электронного блока.",
     repair_replacement1: "Иногда замена блока оказывается целесообразнее, чем восстановление.",
-    repair_replacement2: "Однако в современных автомобилях невозможно просто заменить деталь — необходимо, чтобы автомобиль и новый блок «узнали» друг друга.",
+    repair_replacement2:
+      "Однако в современных автомобилях невозможно просто заменить деталь — необходимо, чтобы автомобиль и новый блок «узнали» друг друга.",
     repair_sync: "Эта синхронизация компонентов также является частью ремонта автомобильной электроники.",
-    
+
     // Retrofit Page
     retrofit_title: "Дооснащение (Retrofit)",
-    retrofit_intro: "Дооснащение — это добавление опций в автомобиль, которые предусмотрены производителем для данной модели, но не были включены в первоначальную комплектацию.",
+    retrofit_intro:
+      "Дооснащение — это добавление опций в автомобиль, которые предусмотрены производителем для данной модели, но не были включены в первоначальную комплектацию.",
     retrofit_popular_title: "Самые популярные опции дооснащения:",
     retrofit_1: "камера заднего вида",
     retrofit_2: "камера 360 градусов (круговой обзор)",
@@ -208,31 +273,46 @@ export const translations = {
     retrofit_25: "бесконтактное открытие крышки багажника",
     retrofit_26: "подогрев, массаж, вентиляция сидений",
     retrofit_27: "дополнительный обогреватель (Webasto)",
-    
+
     // Swap Page
     swap_title: "Swap",
-    swap_intro1: "Свап — это замена штатного двигателя или коробки передач на более подходящий и надёжный вариант, с полной адаптацией под европейский рынок.",
-    swap_intro2: "Процедура выполняется для увеличения мощности, надёжности, экономичности и комфорта автомобиля. Всё делается на заводском уровне — с точной подгонкой, кодированием, настройкой и интеграцией в систему управления авто.",
-    swap_intro3: "Стоимость рассчитывается индивидуально, в зависимости от модели автомобиля и выбранного силового агрегата. Средний срок установки двигателя в коммерческий транспорт — около двух недель.",
-    swap_intro4: "Мы предлагаем индивидуальные решения по установке и отладке моторов и коробок передач в автомобили, выпущенные с другими силовыми агрегатами. Самая частая задача — установка более мощного и долговечного двигателя.",
+    swap_intro1:
+      "Свап — это замена штатного двигателя или коробки передач на более подходящий и надёжный вариант, с полной адаптацией под европейский рынок.",
+    swap_intro2:
+      "Процедура выполняется для увеличения мощности, надёжности, экономичности и комфорта автомобиля. Всё делается на заводском уровне — с точной подгонкой, кодированием, настройкой и интеграцией в систему управления авто.",
+    swap_intro3:
+      "Стоимость рассчитывается индивидуально, в зависимости от модели автомобиля и выбранного силового агрегата. Средний срок установки двигателя в коммерческий транспорт — около двух недель.",
+    swap_intro4:
+      "Мы предлагаем индивидуальные решения по установке и отладке моторов и коробок передач в автомобили, выпущенные с другими силовыми агрегатами. Самая частая задача — установка более мощного и долговечного двигателя.",
     swap_examples_title: "Примеры популярных проектов:",
     swap_ex1_title: "SWAP дизельных моторов Mercedes",
-    swap_ex1_text: "Моделей om606, 611, 612, 613, 646, 647, 648 вместо современных om651, 642, 654. Современные моторы часто выходят из строя и дороги в обслуживании, тогда как двигатели старших поколений Common Rail 1/2/3 служат дольше, проще и дешевле в ремонте.",
-    swap_ex1_note: "Наиболее востребованный вариант — Mercedes Sprinter w906 с мотором om651, где оптимальным решением является установка om648 + 7G-Tronic.",
+    swap_ex1_text:
+      "Моделей om606, 611, 612, 613, 646, 647, 648 вместо современных om651, 642, 654. Современные моторы часто выходят из строя и дороги в обслуживании, тогда как двигатели старших поколений Common Rail 1/2/3 служат дольше, проще и дешевле в ремонте.",
+    swap_ex1_note:
+      "Наиболее востребованный вариант — Mercedes Sprinter w906 с мотором om651, где оптимальным решением является установка om648 + 7G-Tronic.",
     swap_ex2_title: "SWAP автоматических коробок передач Mercedes",
     swap_ex2_text: "Серий 5G и 7G — надёжные, комфортные, с плавным переключением и большим ресурсом.",
     swap_ex3_title: "SWAP BMW мотора M57 + коробки 8HP",
     swap_ex3_text: "Популярное решение для тех, кто ценит динамику, скорость и устойчивость.",
     swap_ex4_title: "SWAP мощных двигателей и коробок VAG-группы",
-    swap_ex4_text: "Особенно актуален для старших поколений автомобилей, где ещё не применялись DSG, но владелец хочет получить современные характеристики и поведение машины.",
-    
+    swap_ex4_text:
+      "Особенно актуален для старших поколений автомобилей, где ещё не применялись DSG, но владелец хочет получить современные характеристики и поведение машины.",
+
     // Diagnostics Page
     diagnostics_title: "Диагностика",
-    diagnostics_intro: "Современный автомобиль с каждым годом становится всё сложнее. В нём находится огромное количество взаимосвязанных компонентов. Порой при выходе из строя одной детали автомобиль полностью становится непригодным к использованию.",
+    diagnostics_intro:
+      "Современный автомобиль с каждым годом становится всё сложнее. В нём находится огромное количество взаимосвязанных компонентов. Порой при выходе из строя одной детали автомобиль полностью становится непригодным к использованию.",
     diagnostics_key: "Залог быстрого и эффективного ремонта — качественная диагностика.",
-    diagnostics_importance: "Только точный диагноз помогает найти проблему и решение. Методом угадывания можно потратить слишком много времени на определение причины.",
-    diagnostics_equipment: "У нас есть необходимое оборудование дилерского уровня для качественной диагностики немецких автомобилей:",
-    diagnostics_other_services: "В большинстве автосервисов до сих пор пользуются мультимарочными сканерами, которыми зачастую можно только увидеть и стереть ошибку — это не диагностика.",
+    diagnostics_importance:
+      "Только точный диагноз помогает найти проблему и решение. Методом угадывания можно потратить слишком много времени на определение причины.",
+    diagnostics_why_important: "Почему важна качественная диагностика?",
+    diagnostics_our_equipment: "Наше оборудование",
+    diagnostics_brands_title: "Диагностика по маркам",
+    diagnostics_difference_title: "Чем отличается профессиональная диагностика?",
+    diagnostics_equipment:
+      "У нас есть необходимое оборудование дилерского уровня для качественной диагностики немецких автомобилей:",
+    diagnostics_other_services:
+      "В большинстве автосервисов до сих пор пользуются мультимарочными сканерами, которыми зачастую можно только увидеть и стереть ошибку — это не диагностика.",
     diagnostics_error_clearing: "Простое стирание ошибок не помогает устранить сложную неисправность.",
     diagnostics_efficient_repair: "Для эффективного ремонта требуется эффективное оборудование.",
     diagnostics_conclusion: "Качественная диагностика — необходимый фактор для устранения сложных неисправностей.",
@@ -243,14 +323,14 @@ export const translations = {
     services: "USŁUGI",
     contacts: "KONTAKTY",
     experience: "15 lat doświadczenia",
-    
+
     // Hero Section
     electronics: "Elektronika samochodów Mercedes (Maybach, Smart)",
     brands: "BMW (Mini, Rolls-Royce), VAG (Audi, VW, Porsche, Bentley)",
     services_list: "Chip Tuning • Ekologia • Doposażenie • Retrofit •",
     services_list_2: "Diagnostyka • Naprawa elektroniki samochodowej •",
     services_list_3: "Kodowanie • Programowanie • Konwersja • Swap",
-    
+
     // Services Section
     our_services: "USŁUGI:",
     chip_tuning: "CHIP TUNING",
@@ -262,7 +342,7 @@ export const translations = {
     coding: "KODOWANIE I PROGRAMOWANIE",
     immobilizer: "KLUCZE / IMMOBILISERY",
     swap: "SWAP",
-    
+
     // Calculator
     calculator_title: "Odkryj możliwości swojego samochodu. STAGE 1",
     select_brand: "Wybierz markę",
@@ -274,8 +354,9 @@ export const translations = {
     torque: "Moment obrotowy",
     hp: "KM",
     nm: "Nm",
-    results_note: "* Rzeczywiste wyniki mogą się różnić od deklarowanych w zależności od temperatury, paliwa i stanu konkretnego pojazdu.",
-    
+    results_note:
+      "* Rzeczywiste wyniki mogą się różnić od deklarowanych w zależności od temperatury, paliwa i stanu konkretnego pojazdu.",
+
     // Reviews Section
     our_reviews: "Opinie naszych klientów",
     reviews_subtitle: "Dowiedz się, dlaczego nas wybierają najlepsi właściciele samochodów niemieckich",
@@ -284,140 +365,211 @@ export const translations = {
     review_counter: "z",
     google_reviews: "Przejrzyj wszystkie recenzje na Google",
     customers_count: "Ponad 100+ zadowolonych klientów AUTOCODER",
-    
+
     // Footer
     services_header: "Usługi",
     contacts_header: "Kontakty",
     address_header: "Adres",
     all_rights: "© 2025 Autocoder. Wszystkie prawa zastrzeżone.",
     whatsapp: "WhatsApp",
-    
+
     // Service Pages
     back_to_services: "Wróć do usług",
     phone_label: "Telefon",
     address_label: "Adres",
     open_in_google: "Otwórz w Google",
-    
+
     // Service Pages - Chip Tuning
-    chip_tuning_intro: "Chip tuning to programowa modyfikacja ustawień elektronicznej jednostki sterującej (ECU) silnikiem samochodu, którą można nazwać «mózgiem» silnika.",
-    chip_tuning_p1: "To programowanie (przeprogramowanie) tego «mózgu» w celu zmuszenia go do pracy inaczej — mocniej i wydajniej.",
-    chip_tuning_p2: "Fabryczne ustawienia w samochodzie to zawsze balans między mocą, ekonomią, trwałością a normami ekologicznymi. Chip tuning usuwa część tych ograniczeń.",
-    chip_tuning_p3: "Głównym celem chip tuningu jest zwiększenie mocy i momentu obrotowego silnika. Po chip tuningu samochód staje się «bardziej responsywny», łatwiej i szybciej przyspiesza.",
+    chip_tuning_intro:
+      "Chip tuning to programowa modyfikacja ustawień elektronicznej jednostki sterującej (ECU) silnikiem samochodu, którą można nazwać «mózgiem» silnika.",
+    chip_tuning_what_is_it: "Czym jest chip tuning?",
+    chip_tuning_benefits_heading: "Korzyści z chip tuningu",
+    chip_tuning_p1:
+      "To programowanie (przeprogramowanie) tego «mózgu» w celu zmuszenia go do pracy inaczej — mocniej i wydajniej.",
+    chip_tuning_p2:
+      "Fabryczne ustawienia w samochodzie to zawsze balans między mocą, ekonomią, trwałością a normami ekologicznymi. Chip tuning usuwa część tych ograniczeń.",
+    chip_tuning_p3:
+      "Głównym celem chip tuningu jest zwiększenie mocy i momentu obrotowego silnika. Po chip tuningu samochód staje się «bardziej responsywny», łatwiej i szybciej przyspiesza.",
+    chip_tuning_stage1_desc:
+      "To programowanie (reflash) tego «mózgu» w celu zmuszenia go do pracy inaczej - mocniej i wydajniej.",
+    chip_tuning_stage1_benefits:
+      "Fabryczne ustawienia w samochodzie to zawsze balans między mocą, oszczędnością, trwałością a normami ekologicznymi. Chip tuning usuwa część tych ograniczeń.",
+    chip_tuning_stage1_safety:
+      "Głównym celem chip tuningu jest zwiększenie mocy i momentu obrotowego silnika. Po chip tuningu samochód staje się bardziej responsywny, łatwiej i szybciej przyspiesza.",
+    chip_tuning_process: "Proces chip tuningu",
+    chip_tuning_process_step1: "Odczyt oryginalnego oprogramowania z ECU",
+    chip_tuning_process_step2: "Analiza i modyfikacja map silnika",
+    chip_tuning_process_step3: "Wgranie zmodyfikowanego oprogramowania",
+    chip_tuning_process_step4: "Testowanie i dostosowanie parametrów",
+    chip_tuning_why_choose_us: "Dlaczego my?",
+    chip_tuning_why_us_experience: "Ponad 15 lat doświadczenia w chip tuningu",
+    chip_tuning_why_us_quality: "Najwyższa jakość oprogramowania od sprawdzonych dostawców",
+    chip_tuning_why_us_individual: "Indywidualne podejście do każdego samochodu",
+    chip_tuning_why_us_support: "Wsparcie po tuningu i gwarancja",
     chip_tuning_examples_title: "Przykłady różnic marketingowych",
-    chip_tuning_examples_intro: "W niektórych przypadkach producent sprzedaje ten sam samochód z tym samym silnikiem pod innym oznaczeniem. Jest to wyłącznie związane z marketingiem.",
-    chip_tuning_example1: "Mercedes Vito W447 z silnikiem OM651 istnieje w trzech oznaczeniach — 114d (136KM), 116d (163KM), 119d (190KM). Przy tym silnik jest ten sam.",
-    chip_tuning_example2: "Mercedes Vito W639 z silnikiem OM646 — w trzech modyfikacjach 109d (89KM), 111d (110KM), 115d (150KM). Przy tym pod względem technicznym te samochody są identyczne.",
+    chip_tuning_examples_intro:
+      "W niektórych przypadkach producent sprzedaje ten sam samochód z tym samym silnikiem pod innym oznaczeniem. Jest to wyłącznie związane z marketingiem.",
+    chip_tuning_example1:
+      "Mercedes Vito W447 z silnikiem OM651 istnieje w trzech oznaczeniach — 114d (136KM), 116d (163KM), 119d (190KM). Przy tym silnik jest ten sam.",
+    chip_tuning_example2:
+      "Mercedes Vito W639 z silnikiem OM646 — w trzech modyfikacjach 109d (89KM), 111d (110KM), 115d (150KM). Przy tym pod względem technicznym te samochody są identyczne.",
     chip_tuning_similar: "Takie same przykłady spotyka się u innych producentów samochodów.",
-    chip_tuning_reveal: "Dla właściciela samochodu z tym samym silnikiem, ale «zdławionym» oprogramowaniem, chip tuning najlepiej ujawnia potencjał silnika.",
+    chip_tuning_reveal:
+      "Dla właściciela samochodu z tym samym silnikiem, ale «zdławionym» oprogramowaniem, chip tuning najlepiej ujawnia potencjał silnika.",
     chip_tuning_advantages_title: "Kluczowe zalety",
-    chip_tuning_adv1: "W każdym samochodzie przyrost jest indywidualny. Zależy od możliwości silnika i budżetu klienta.",
-    chip_tuning_adv2: "Stage 1 (wyłącznie praca programowa, bez fizycznych zmian w konstrukcji silnika) jest najbardziej optymalnym i budżetowym wariantem dla absolutnej większości właścicieli samochodów.",
+    chip_tuning_adv1:
+      "W każdym samochodzie przyrost jest indywidualny. Zależy od możliwości silnika i budżetu klienta.",
+    chip_tuning_adv2:
+      "Stage 1 (wyłącznie praca programowa, bez fizycznych zmian w konstrukcji silnika) jest najbardziej optymalnym i budżetowym wariantem dla absolutnej większości właścicieli samochodów.",
     chip_tuning_adv3: "Chip tuning jest szczególnie skuteczny na silnikach turbodoładowanych i doładowanych sprężarką.",
-    chip_tuning_adv4: "W niektórych przypadkach możliwe jest zmniejszenie zużycia paliwa — w zależności od stanu układu paliwowego.",
+    chip_tuning_adv4:
+      "W niektórych przypadkach możliwe jest zmniejszenie zużycia paliwa — w zależności od stanu układu paliwowego.",
     chip_tuning_adv5: "Również przy chip tuningu można usunąć programowe ograniczenia mocy i prędkości.",
-    chip_tuning_safety: "Wykwalifikowany chip tuning nie szkodzi silnikowi. Naturalne zużycie zależy od warunków eksploatacji.",
-    chip_tuning_warning: "Oczywiście przy niekwalifikowanym chip tuningu można uszkodzić silnik i jego zewnętrzne komponenty.",
+    chip_tuning_safety:
+      "Wykwalifikowany chip tuning nie szkodzi silnikowi. Naturalne zużycie zależy od warunków eksploatacji.",
+    chip_tuning_warning:
+      "Oczywiście przy niekwalifikowanym chip tuningu można uszkodzić silnik i jego zewnętrzne komponenty.",
     chip_tuning_decision: "O konieczności chip tuningu właściciel samochodu powinien podejmować decyzję samodzielnie.",
-    
+
     // Coding Page
     coding_title: "Kodowanie i programowanie",
     coding_intro1: "Każda elektroniczna jednostka sterująca w samochodzie ma swoje funkcje i własne oprogramowanie.",
-    coding_intro2: "Producent może wypuszczać ten sam moduł z różnymi wersjami oprogramowania — w zależności od modelu, wyposażenia i rynku.",
+    coding_intro2:
+      "Producent może wypuszczać ten sam moduł z różnymi wersjami oprogramowania — w zależności od modelu, wyposażenia i rynku.",
     coding_intro3: "Również ten sam moduł może działać różnie, w zależności od zadań i ustawień użytkownika.",
     programming_title: "Programowanie",
-    programming_intro: "Programowanie to aktualizacja, zmiana lub przywrócenie oprogramowania jednostki sterującej w różnych celach.",
+    programming_intro:
+      "Programowanie to aktualizacja, zmiana lub przywrócenie oprogramowania jednostki sterującej w różnych celach.",
     programming_1_title: "1. Poprawa funkcjonalności",
-    programming_1_text: "Nowe oprogramowanie może dodawać możliwości, poprawiać pracę systemów lub eliminować niedociągnięcia poprzednich wersji.",
+    programming_1_text:
+      "Nowe oprogramowanie może dodawać możliwości, poprawiać pracę systemów lub eliminować niedociągnięcia poprzednich wersji.",
     programming_2_title: "2. Adaptacja do innego samochodu",
     programming_2_text: "Czasami wymagane jest zaprogramowanie modułu z jednego samochodu pod inny.",
-    programming_2_example: "Na przykład, moduł sterowania skrzynią biegów może być taki sam dla różnych silników, ale dla każdego silnika używany jest własny program.",
+    programming_2_example:
+      "Na przykład, moduł sterowania skrzynią biegów może być taki sam dla różnych silników, ale dla każdego silnika używany jest własny program.",
     programming_3_title: "3. Przywracanie po awariach",
-    programming_3_text1: "Oprogramowanie może ulec awarii z powodu rozładowania akumulatora, awarii innych modułów lub uszkodzeń fizycznych.",
-    programming_3_text2: "W takich przypadkach moduł przestaje wykonywać swoje funkcje i do przywrócenia jego pracy wymagane jest przeprogramowanie.",
-    programming_3_example: "Czasami trzeba przywrócić fabryczne oprogramowanie po niekwalifikowanej ingerencji — przywrócić wszystko tak, jak było zaplanowane przez producenta.",
+    programming_3_text1:
+      "Oprogramowanie może ulec awarii z powodu rozładowania akumulatora, awarii innych modułów lub uszkodzeń fizycznych.",
+    programming_3_text2:
+      "W takich przypadkach moduł przestaje wykonywać swoje funkcje i do przywrócenia jego pracy wymagane jest przeprogramowanie.",
+    programming_3_example:
+      "Czasami trzeba przywrócić fabryczne oprogramowanie po niekwalifikowanej ingerencji — przywrócić wszystko tak, jak było zaplanowane przez producenta.",
     coding_section_title: "Kodowanie",
-    coding_intro: "Kodowanie pozwala aktywować lub dezaktywować funkcje i tryby zawarte w module sterującym, w zależności od życzeń właściciela lub warunków eksploatacji.",
+    coding_intro:
+      "Kodowanie pozwala aktywować lub dezaktywować funkcje i tryby zawarte w module sterującym, w zależności od życzeń właściciela lub warunków eksploatacji.",
     coding_examples_title: "Przykłady:",
     coding_ex1: "włączanie lub wyłączanie funkcji start-stop;",
     coding_ex2: "aktywacja lub dezaktywacja przypomnienia o pasie bezpieczeństwa;",
     coding_ex3: "automatyczne włączanie świateł.",
     coding_sync1: "Czasami kodowanie jest wymagane do koordynacji pracy kilku modułów między sobą.",
-    coding_sync2: "Na przykład, przy aktywacji tempomatu zmiany wprowadzane są jednocześnie do kilku modułów, lub przy instalacji modułu sterowania silnikiem z manualnej na automatyczną wymagane jest przekodowanie.",
-    coding_sync3: "Przy doposażaniu samochodu nową opcją ważne jest nie tylko zainstalowanie sprzętu, ale także zakodowanie odpowiedniego modułu.",
-    coding_sync4: "Na przykład, po instalacji kamery cofania trzeba zakodować multimedia, aby «wiedziało» o tej funkcji i wyświetlało obraz.",
-    coding_extra: "Również kodowanie jest używane do aktywacji dodatkowych funkcji, niewłączonych fabrycznie domyślnie — takich jak zamykanie szyb z klucza lub aktywacja menu AMG na desce rozdzielczej (dla samochodów Mercedes).",
-    
+    coding_sync2:
+      "Na przykład, przy aktywacji tempomatu zmiany wprowadzane są jednocześnie do kilku modułów, lub przy instalacji modułu sterowania silnikiem z manualnej na automatyczną wymagane jest przekodowanie.",
+    coding_sync3:
+      "Przy doposażaniu samochodu nową opcją ważne jest nie tylko zainstalowanie sprzętu, ale także zakodowanie odpowiedniego modułu.",
+    coding_sync4:
+      "Na przykład, po instalacji kamery cofania trzeba zakodować multimedia, aby «wiedziało» o tej funkcji i wyświetlało obraz.",
+    coding_extra:
+      "Również kodowanie jest używane do aktywacji dodatkowych funkcji, niewłączonych fabrycznie domyślnie — takich jak zamykanie szyb z klucza lub aktywacja menu AMG na desce rozdzielczej (dla samochodów Mercedes).",
+
     // Conversion Page
-    conversion_title: "Konwersja",
-    conversion_intro1: "W nowoczesnych samochodach większość funkcji jest zarządzana przez oprogramowanie.",
-    conversion_intro2: "Nawigacja, sterowanie głosowe, multimedia, klimatyzacja, moduły sterowania silnikiem i asystenci kierowcy — wszystko to zależy od oprogramowania i konfiguracji, które różnią się w zależności od rynku, na który pierwotnie został wypuszczony samochód.",
-    conversion_definition: "Konwersja to adaptacja samochodu z USA na rynek europejski.",
-    conversion_includes: "Zazwyczaj obejmuje:",
-    conversion_1: "kodowanie i programowanie modułów sterujących do przeliczenia na europejskie jednostki miary;",
-    conversion_2: "zmianę częstotliwości radiowych;",
-    conversion_3: "aktualizację map nawigacji Europy;",
-    conversion_4: "dodanie potrzebnego języka interfejsu;",
-    conversion_5: "modyfikację instalacji elektrycznej pod reflektory i lampy;",
-    conversion_6: "instalację europejskiej optyki;",
-    conversion_7: "wymianę skali prędkościomierza.",
-    conversion_support: "Większość samochodów z USA pierwotnie nie ma wsparcia dla europejskich standardów i języków interfejsu.",
-    conversion_expertise: "Dlatego adaptacja takich samochodów wymaga doświadczenia w pracy z modułami elektronicznymi i profesjonalnego sprzętu, aby wszystkie systemy działały prawidłowo w warunkach europejskich.",
-    conversion_price: "Koszt zaczyna się od 200 złotych",
-    
+    conversion_title: "Konwersja USA-EU",
+    conversion_intro1:
+      "Import samochodów z USA staje się coraz bardziej popularny w Europie. Wiele osób decyduje się na zakup auta z amerykańskiego rynku ze względu na korzystniejsze ceny i szerszy wybór.",
+    conversion_intro2: "Jednakże samochody sprowadzone z USA wymagają odpowiedniej adaptacji do warunków europejskich.",
+    conversion_definition: "Czym jest konwersja USA-EU?",
+    conversion_what_included: "Co wchodzi w skład konwersji?",
+    conversion_process_title: "Proces konwersji",
+    conversion_why_us_title: "Dlaczego my?",
+    conversion_includes: "Konwersja obejmuje:",
+    conversion_1: "Zmiana jednostek miar (mile → kilometry, galony → litry, °F → °C)",
+    conversion_2: "Zmiana języka menu i nawigacji na polski lub rosyjski",
+    conversion_3: "Aktywacja lamp przeciwmgielnych",
+    conversion_4: "Zmiana map nawigacyjnych z USA na Europę",
+    conversion_5: "Dostosowanie świateł do ruchu prawostronnego",
+    conversion_6: "Wyłączenie komunikatów o funkcjach niedostępnych w Europie",
+    conversion_7: "Inne niezbędne zmiany programowe",
+    conversion_support: "Wspieramy w procesie homologacji i rejestracji pojazdu sprowadzonego z USA.",
+    conversion_expertise: "Mamy wieloletnie doświadczenie w konwersji Mercedes, BMW i VAG.",
+    conversion_price: "Cena: od 200 zł",
+
     // Ecology Page
     ecology_title: "EKO (Systemy ekologiczne)",
-    ecology_intro1: "W nowoczesnych samochodach z roku na rok przybywa systemów ekologicznych. Wdrożenie każdego nowego systemu w nowoczesnym samochodzie jest podyktowane koniecznością spełnienia rygorystycznych standardów ekologicznych.",
-    ecology_intro2: "Różne pokolenia samochodów mają różne normy ekologiczne — EURO2 / EURO3 / EURO4 / EURO5 / EURO6.",
+    ecology_intro1:
+      "W nowoczesnych samochodach z każdym rokiem przybywa systemów ekologicznych. Wdrożenie każdego nowego systemu jest podyktowane koniecznością spełnienia rygorystycznych norm ekologicznych.",
+    ecology_intro2: "Różne generacje samochodów mają różne normy ekologiczne — EURO2 / EURO3 / EURO4 / EURO5 / EURO6.",
+    ecology_standards_title: "Normy ekologiczne",
+    ecology_components_title: "Komponenty systemów ekologicznych",
+    ecology_problems_title: "Typowe problemy",
+    ecology_solutions_title: "Nasze rozwiązania",
     ecology_euro6: "EURO6 — AdBlue",
     ecology_euro4: "EURO4 — filtr cząstek stałych",
     ecology_euro3: "EURO3 — katalizator",
     ecology_components_intro: "Do listy komponentów z kategorii ekologia można zaliczyć:",
-    ecology_comp1: "AdBlue (czujniki NOx, katalizator, zbiornik AdBlue, pompa AdBlue, dysza AdBlue),",
+    ecology_comp1: "AdBlue (czujniki NOx, katalizator, zbiornik AdBlue, pompa AdBlue, wtryskiwacz AdBlue),",
     ecology_comp2: "filtr cząstek stałych (czujniki temperatury spalin, czujnik ciśnienia różnicowego),",
     ecology_comp3: "katalizator (sondy lambda, system przedmuchiwania katalizatora),",
     ecology_comp4: "EGR (wysokiego i niskiego ciśnienia, wymiennik ciepła EGR),",
     ecology_comp5: "klapy wirowe.",
-    ecology_failure: "Każdy z tych komponentów może ulec awarii, co doprowadzi do uszkodzenia samochodu lub nawet zakazu możliwości ruchu.",
-    ecology_adblue: "Na przykład, przy awarii systemu AdBlue włącza się licznik kilometrów, po których uruchomienie samochodu stanie się niemożliwe — aktywuje się blokada rozruchu.",
-    ecology_dpf: "W przypadku filtra cząstek stałych samochód czasami kontynuuje nieudane regeneracje, co może doprowadzić do uszkodzenia silnika z powodu nadmiernego poziomu oleju w misce olejowej (olej napędowy dostaje się do silnika przy niepełnej regeneracji DPF).",
-    ecology_experience: "Mamy bogate doświadczenie w eliminowaniu usterek wszelkich systemów ekologicznych.",
-    ecology_expertise: "Skutecznie rozwiązujemy problemy tego rodzaju nawet w tych przypadkach, gdy już była dokonana ingerencja przez niekwalifikowanych specjalistów.",
-    ecology_equipment: "Mamy cały niezbędny sprzęt do przywracania fabrycznego oprogramowania modułu sterowania silnikiem dowolnych samochodów niemieckich.",
-    
+    ecology_failure:
+      "Każdy z tych komponentów może ulec awarii, co doprowadzi do unieruchomienia samochodu lub nawet zakazu ruchu.",
+    ecology_adblue:
+      "Na przykład, przy awarii systemu AdBlue włącza się licznik kilometrów, po których uruchomienie samochodu stanie się niemożliwe — aktywuje się blokada rozruchu.",
+    ecology_dpf:
+      "W przypadku filtra cząstek stałych samochód czasem kontynuuje nieudane regeneracje, co może doprowadzić do uszkodzenia silnika z powodu nadmiernego poziomu oleju w misce olejowej (olej napędowy dostaje się do silnika przy niepełnej regeneracji DPF).",
+    ecology_experience: "Mamy bogate doświadczenie w rozwiązywaniu awarii wszelkich systemów ekologicznych.",
+    ecology_expertise:
+      "Skutecznie rozwiązujemy problemy tego typu nawet w przypadkach, gdy doszło już do interwencji niekwalifikowanych specjalistów.",
+    ecology_equipment:
+      "Posiadamy cały niezbędny sprzęt do przywrócenia fabrycznego oprogramowania jednostki sterującej silnikiem dowolnych niemieckich samochodów.",
+
     // Immobilizer Page
-    immobilizer_title: "Immobiliser",
-    immobilizer_intro1: "Immobiliser to system, który blokuje uruchomienie samochodu w przypadku braku klucza pasującego do danego samochodu.",
-    immobilizer_intro2: "Ten system jest obecny we wszystkich samochodach od około połowy lat 90.",
-    immobilizer_intro3: "Główną funkcją immobilisera jest zapobieganie kradzieży. Czasami system przeciwkradzieżowy może stać się przeszkodą w uruchomieniu samochodu.",
-    immobilizer_problems_title: "Problemy z immobiliserem można podzielić na dwie grupy:",
-    immobilizer_prob1_title: "Utrata lub uszkodzenie «oryginalnego» klucza",
-    immobilizer_prob1_text: "To «normalna» awaria, przewidziana przez producenta, do blokady rozruchu silnika bez pasującego elektronicznego klucza.",
-    immobilizer_prob2_title: "Pośrednie awarie innych modułów elektronicznych",
-    immobilizer_prob2_text1: "Pośrednie awarie innych modułów elektronicznych połączonych w kompleks systemu przeciwkradzieżowego.",
-    immobilizer_prob2_text2: "Do tych modułów mogą należeć: moduł sterowania silnikiem, moduł sterowania skrzynią biegów, moduł autoryzacji dostępu, tablica przyrządów, blokada kierownicy, elektroniczny zamek zapłonu, elektroniczny selektor automatycznej skrzyni biegów.",
-    immobilizer_prob2_text3: "Przy awarii jednego z tych modułów całkowicie blokowany jest rozruch lub ruch samochodu.",
-    immobilizer_expertise: "Nie tylko produkujemy klucze do samochodów niemieckich, ale także szybko określamy i profesjonalnie rozwiązujemy problemy w innych modułach elektronicznych związanych z systemem przeciwkradzieżowym samochodu.",
-    
+    immobilizer_title: "Klucze i Immobiliser",
+    immobilizer_intro1:
+      "Immobilizer to elektroniczny system przeciwkradzieżowy, który uniemożliwia uruchomienie silnika bez oryginalnego klucza.",
+    immobilizer_intro2: "Problemy z immobilizerem mogą całkowicie unieruchomić samochód.",
+    immobilizer_intro3: "Rozwiązujemy wszelkie problemy związane z kluczami i systemem immobilizera.",
+    immobilizer_what_is: "Czym jest immobilizer?",
+    immobilizer_services_title: "Nasze usługi",
+    immobilizer_how_we_help: "Jak pomagamy?",
+    immobilizer_problems_title: "Rozwiązywane problemy",
+    immobilizer_prob1_title: "Utrata wszystkich kluczy",
+    immobilizer_prob1_text:
+      "Dorabiamy nowe klucze i programujemy je do samochodu nawet w przypadku utraty wszystkich kluczy. Posiadamy specjalistyczny sprzęt i oprogramowanie.",
+    immobilizer_prob2_title: "Awaria modułów immobilizera",
+    immobilizer_prob2_text1:
+      "EIS (Electronic Ignition Switch) / EZS (Elektronische Zündschloss) — moduł stacyjki w Mercedes.",
+    immobilizer_prob2_text2: "CAS (Car Access System) — moduł dostępu w BMW.",
+    immobilizer_prob2_text3: "Naprawiamy i synchronizujemy te moduły z ECU i kluczami.",
+    immobilizer_expertise: "Mamy wieloletnie doświadczenie w pracy z systemami immobilizera Mercedes, BMW i VAG.",
+
     // Repair Page
     repair_title: "Naprawa elektroniki",
-    repair_intro1: "Nowoczesny samochód nie może funkcjonować bez elektroniki. Im nowszy i bardziej skomplikowany technicznie samochód, tym więcej systemów elektronicznych w nim zawiera.",
-    repair_intro2: "Za różne funkcje odpowiadają osobne moduły sterujące. W nowoczesnych samochodach niemieckich klasy premium może być do 200 modułów elektronicznych.",
+    repair_intro1:
+      "Nowoczesny samochód nie może funkcjonować bez elektroniki. Im nowszy i bardziej skomplikowany technicznie samochód, tym więcej systemów elektronicznych w nim zawiera.",
+    repair_intro2:
+      "Za różne funkcje odpowiadają osobne moduły sterujące. W nowoczesnych samochodach niemieckich klasy premium może być do 200 modułów elektronicznych.",
     repair_intro3: "Każdy moduł ma swoje zadania.",
-    repair_intro4: "Każdy moduł sterujący to w zasadzie komputer z własnym środowiskiem operacyjnym, który czasami przewyższa liczbą komponentów nowoczesny laptop lub telefon.",
+    repair_intro4:
+      "Każdy moduł sterujący to w zasadzie komputer z własnym środowiskiem operacyjnym, który czasami przewyższa liczbą komponentów nowoczesny laptop lub telefon.",
     repair_intro5: "Jak każda elektronika użytkowa, elektronika samochodowa może ulegać awarii.",
     repair_types_title: "Awarie dzielą się na dwa typy:",
     repair_type1_title: "Fizyczne",
-    repair_type1_text: "Powstają z powodu zmęczenia komponentów, wpływów zewnętrznych (woda, zwarcie, brud, fizyczne uderzenie).",
+    repair_type1_text:
+      "Powstają z powodu zmęczenia komponentów, wpływów zewnętrznych (woda, zwarcie, brud, fizyczne uderzenie).",
     repair_type2_title: "Programowe",
-    repair_type2_text: "Pojawiają się wskutek awarii w pracy modułów elektronicznych, niekwalifikowanej ingerencji lub problemów z zasilaniem.",
-    repair_diagnosis: "Po takich uszkodzeniach, aby samochód ponownie funkcjonował prawidłowo, wymagane jest przeprowadzenie jakościowej diagnostyki i naprawy modułu elektronicznego.",
+    repair_type2_text:
+      "Pojawiają się wskutek awarii w pracy modułów elektronicznych, niekwalifikowanej ingerencji lub problemów z zasilaniem.",
+    repair_diagnosis:
+      "Po takich uszkodzeniach, aby samochód ponownie funkcjonował prawidłowo, wymagane jest przeprowadzenie jakościowej diagnostyki i naprawy modułu elektronicznego.",
     repair_replacement1: "Czasami wymiana modułu okazuje się bardziej celowa niż naprawa.",
-    repair_replacement2: "Jednak w nowoczesnych samochodach niemożliwa jest prosta wymiana części — konieczne jest, aby samochód i nowy moduł «poznały» się wzajemnie.",
+    repair_replacement2:
+      "Jednak w nowoczesnych samochodach niemożliwa jest prosta wymiana części — konieczne jest, aby samochód i nowy moduł «poznały» się wzajemnie.",
     repair_sync: "Ta synchronizacja komponentów również jest częścią naprawy elektroniki samochodowej.",
-    
+
     // Retrofit Page
     retrofit_title: "Doposażenie (Retrofit)",
-    retrofit_intro: "Doposażenie to dodawanie opcji do samochodu, które są przewidziane przez producenta dla danego modelu, ale nie były włączone w początkowe wyposażenie.",
+    retrofit_intro:
+      "Doposażenie to dodawanie opcji do samochodu, które są przewidziane przez producenta dla danego modelu, ale nie były włączone w początkowe wyposażenie.",
     retrofit_popular_title: "Najpopularniejsze opcje doposażenia:",
     retrofit_1: "kamera cofania",
     retrofit_2: "kamera 360 stopni (widok okrężny)",
@@ -446,38 +598,53 @@ export const translations = {
     retrofit_25: "bezdotykowe otwieranie klapy bagażnika",
     retrofit_26: "podgrzewanie, masaż, wentylacja foteli",
     retrofit_27: "dodatkowe ogrzewanie (Webasto)",
-    
+
     // Swap Page
     swap_title: "Swap",
-    swap_intro1: "Swap to wymiana standardowego silnika lub skrzyni biegów na bardziej odpowiedni i niezawodny wariant, z pełną adaptacją na rynek europejski.",
-    swap_intro2: "Procedura wykonywana jest w celu zwiększenia mocy, niezawodności, ekonomii i komfortu samochodu. Wszystko odbywa się na poziomie fabrycznym — z dokładnym dopasowaniem, kodowaniem, konfiguracją i integracją z systemem zarządzania pojazdem.",
-    swap_intro3: "Koszt obliczany jest indywidualnie, w zależności od modelu samochodu i wybranej jednostki napędowej. Średni czas instalacji silnika w pojazd użytkowy to około dwóch tygodni.",
-    swap_intro4: "Oferujemy indywidualne rozwiązania instalacji i konfiguracji silników i skrzyń biegów w samochodach wypuszczonych z innymi jednostkami napędowymi. Najczęstsze zadanie to instalacja mocniejszego i bardziej trwałego silnika.",
+    swap_intro1:
+      "Swap to wymiana standardowego silnika lub skrzyni biegów na bardziej odpowiedni i niezawodny wariant, z pełną adaptacją na rynek europejski.",
+    swap_intro2:
+      "Procedura wykonywana jest w celu zwiększenia mocy, niezawodności, ekonomii i komfortu samochodu. Wszystko odbywa się na poziomie fabrycznym — z dokładnym dopasowaniem, kodowaniem, konfiguracją i integracją z systemem zarządzania pojazdem.",
+    swap_intro3:
+      "Koszt obliczany jest indywidualnie, w zależności od modelu samochodu i wybranej jednostki napędowej. Średni czas instalacji silnika w pojazd użytkowy to około dwóch tygodni.",
+    swap_intro4:
+      "Oferujemy indywidualne rozwiązania instalacji i konfiguracji silników i skrzyń biegów w samochodach wypuszczonych z innymi jednostkami napędowymi. Najczęstsze zadanie to instalacja mocniejszego i bardziej trwałego silnika.",
     swap_examples_title: "Przykłady popularnych projektów:",
     swap_ex1_title: "SWAP silników diesla Mercedes",
-    swap_ex1_text: "Modeli om606, 611, 612, 613, 646, 647, 648 zamiast nowoczesnych om651, 642, 654. Nowoczesne silniki często ulegają awarii i są drogie w obsłudze, podczas gdy silniki starszych generacji Common Rail 1/2/3 służą dłużej, są prostsze i tańsze w naprawie.",
-    swap_ex1_note: "Najbardziej poszukiwany wariant to Mercedes Sprinter w906 z silnikiem om651, gdzie optymalnym rozwiązaniem jest instalacja om648 + 7G-Tronic.",
+    swap_ex1_text:
+      "Modeli om606, 611, 612, 613, 646, 647, 648 zamiast nowoczesnych om651, 642, 654. Nowoczesne silniki często ulegają awarii i są drogie w obsłudze, podczas gdy silniki starszych generacji Common Rail 1/2/3 służą dłużej, są prostsze i tańsze w naprawie.",
+    swap_ex1_note:
+      "Najbardziej poszukiwany wariant to Mercedes Sprinter w906 z silnikiem om651, gdzie optymalnym rozwiązaniem jest instalacja om648 + 7G-Tronic.",
     swap_ex2_title: "SWAP automatycznych skrzyń biegów Mercedes",
     swap_ex2_text: "Serii 5G i 7G — niezawodne, komfortowe, z płynnym przełączaniem i dużym zasobem.",
     swap_ex3_title: "SWAP BMW silnika M57 + skrzyni 8HP",
     swap_ex3_text: "Popularne rozwiązanie dla tych, którzy cenią dynamikę, prędkość i stabilność.",
     swap_ex4_title: "SWAP mocnych silników i skrzyń grupy VAG",
-    swap_ex4_text: "Szczególnie aktualne dla starszych generacji samochodów, gdzie jeszcze nie stosowano DSG, ale właściciel chce uzyskać nowoczesne charakterystyki i zachowanie pojazdu.",
-    
+    swap_ex4_text:
+      "Szczególnie aktualne dla starszych generacji samochodów, gdzie jeszcze nie stosowano DSG, ale właściciel chce uzyskać nowoczesne charakterystyki i zachowanie pojazdu.",
+
     // Diagnostics Page
     diagnostics_title: "Diagnostyka",
-    diagnostics_intro: "Nowoczesny samochód z roku na rok staje się coraz bardziej skomplikowany. Zawiera ogromną liczbę wzajemnie powiązanych komponentów. Czasami przy awarii jednej części samochód całkowicie staje się niezdatny do użytku.",
-    diagnostics_key: "Gwarancją szybkiej i efektywnej naprawy jest jakościowa diagnostyka.",
-    diagnostics_importance: "Tylko dokładna diagnoza pomaga znaleźć problem i rozwiązanie. Metodą zgadywania można poświęcić zbyt wiele czasu na określenie przyczyny.",
-    diagnostics_equipment: "Mamy niezbędny sprzęt na poziomie dealerskim do jakościowej diagnostyki samochodów niemieckich:",
-    diagnostics_other_services: "W większości serwisów samochodowych nadal używane są skanery wielomarkowe, za pomocą których często można tylko zobaczyć i skasować błąd — to nie jest diagnostyka.",
-    diagnostics_error_clearing: "Proste kasowanie błędów nie pomaga w usunięciu skomplikowanej usterki.",
-    diagnostics_efficient_repair: "Do efektywnej naprawy wymagany jest efektywny sprzęt.",
-    diagnostics_conclusion: "Jakościowa diagnostyka to niezbędny czynnik do usunięcia skomplikowanych usterek.",
-  }
+    diagnostics_intro:
+      "Nowoczesny samochód z każdym rokiem staje się coraz bardziej skomplikowany. Znajduje się w nim ogromna liczba wzajemnie powiązanych komponentów. Czasem przy awarii jednej części samochód całkowicie staje się nieprzydatny do użytku.",
+    diagnostics_key: "Klucz do szybkiej i efektywnej naprawy — jakościowa diagnostyka.",
+    diagnostics_importance:
+      "Tylko dokładna diagnoza pomaga znaleźć problem i rozwiązanie. Metodą zgadywania można stracić zbyt wiele czasu na określenie przyczyny.",
+    diagnostics_why_important: "Dlaczego ważna jest jakościowa diagnostyka?",
+    diagnostics_our_equipment: "Nasz sprzęt",
+    diagnostics_brands_title: "Diagnostyka według marek",
+    diagnostics_difference_title: "Czym różni się profesjonalna diagnostyka?",
+    diagnostics_equipment:
+      "Posiadamy niezbędny sprzęt na poziomie dealerskim do jakościowej diagnostyki niemieckich samochodów:",
+    diagnostics_other_services:
+      "W większości warsztatów wciąż korzysta się ze skanerów wielomarkowych, którymi często można jedynie zobaczyć i skasować błąd — to nie jest diagnostyka.",
+    diagnostics_error_clearing: "Proste kasowanie błędów nie pomaga wyeliminować skomplikowanej usterki.",
+    diagnostics_efficient_repair: "Do efektywnej naprawy potrzebny jest efektywny sprzęt.",
+    diagnostics_conclusion: "Jakościowa diagnostyka — niezbędny czynnik do usuwania skomplikowanych usterek.",
+  },
 }
 
-export type Language = 'ru' | 'pl'
+export type Language = "ru" | "pl"
 export type TranslationKey = keyof typeof translations.ru
 
 export function t(key: TranslationKey, lang: Language): string {
