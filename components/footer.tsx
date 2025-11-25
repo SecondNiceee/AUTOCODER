@@ -1,7 +1,7 @@
 "use client"
 
-import { Phone, MapPin, Instagram } from 'lucide-react'
-import Link from 'next/link'
+import { Phone, MapPin, Instagram } from "lucide-react"
+import Link from "next/link"
 import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 
@@ -31,7 +31,9 @@ export function Footer() {
               {serviceLinks.map((service) => (
                 <li key={service.key}>
                   <Link href={service.href}>
-                    <span className="text-white/70 hover:text-lime-500 transition-colors text-sm cursor-pointer">{t(service.key, language)}</span>
+                    <span className="text-white/70 hover:text-lime-500 transition-colors text-sm cursor-pointer">
+                      {t(service.key, language)}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -92,3 +94,5 @@ export function Footer() {
     </footer>
   )
 }
+
+export default Footer

@@ -1,28 +1,28 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import ImmobilizerClientPage from "./immobilizer-client"
+import ImmobilizerClientPage from "@/app/immobilizer/immobilizer-client"
 
 export const metadata: Metadata = {
-  title: "Klucze i Immobiliser | Programowanie Kluczy | Mercedes, BMW, VAG",
+  title: "Ключи и Иммобилайзер | Программирование Ключей | Mercedes, BMW, VAG",
   description:
-    "Programowanie kluczy, naprawa immobilisera Mercedes, BMW, VAG w Poznaniu. Rozwiązanie problemów z systemem przeciwkradzieżowym.",
+    "Программирование ключей, ремонт иммобилайзера Mercedes, BMW, VAG в Познани. Решение проблем с противоугонной системой.",
   keywords: [
+    "программирование ключей",
+    "иммобилайзер",
+    "ключи Mercedes",
+    "ключи BMW",
+    "ремонт иммобилайзера",
     "programowanie kluczy",
     "immobiliser",
-    "klucze Mercedes",
-    "klucze BMW",
-    "naprawa immobilisera",
-    "иммобилайзер",
-    "ключи",
   ],
   openGraph: {
-    title: "Klucze i Immobiliser | Programowanie Kluczy | Autocoder Poznań",
+    title: "Ключи и Иммобилайзер | Программирование Ключей | Autocoder Познань",
     description:
-      "Programowanie kluczy, naprawa immobilisera Mercedes, BMW, VAG. Rozwiązanie problemów z systemem przeciwkradzieżowym.",
-    url: `${SITE_URL}/immobilizer`,
+      "Программирование ключей, ремонт иммобилайзера Mercedes, BMW, VAG. Решение проблем с противоугонной системой.",
+    url: `${SITE_URL}/ru/immobilizer`,
   },
   alternates: {
-    canonical: `${SITE_URL}/immobilizer`,
+    canonical: `${SITE_URL}/ru/immobilizer`,
   },
 }
 

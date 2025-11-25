@@ -1,17 +1,18 @@
 "use client"
 
+import { Footer } from "@/components/footer"
 import Link from "next/link"
-
+import { ArrowLeft } from "lucide-react"
 import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
-import Footer from "@/components/footer"
-import ArrowLeft from "@/components/icons/arrow-left"
 
-export default function EcologyPage() {
+export default function ConversionClientPage() {
   const { language } = useLanguage()
 
   return (
     <main className="bg-white min-h-screen">
+      {/* Removed <Header /> component since it's now in layout */}
+
       <div className="relative py-16 sm:py-20 md:py-24 overflow-hidden">
         {/* Animated grid pattern background */}
         <div className="absolute inset-0 opacity-20">
@@ -41,87 +42,65 @@ export default function EcologyPage() {
           </Link>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-8 uppercase tracking-tight">
-            {t("ecology_title", language)}
+            {t("conversion_title", language)}
           </h1>
 
           <div className="bg-white/80 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-8 sm:p-10 md:p-12 shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.65_0.18_130)]/5 via-transparent to-[oklch(0.65_0.18_130)]/5 pointer-events-none" />
 
             <div className="prose prose-lg max-w-none relative z-10">
-              <p className="text-gray-700 leading-relaxed mb-6">{t("ecology_intro1", language)}</p>
+              <p className="text-gray-700 leading-relaxed mb-6">{t("conversion_intro1", language)}</p>
 
-              <h3 className="text-xl font-bold text-gray-900 mb-4 mt-6">{t("ecology_standards_title", language)}</h3>
+              <p className="text-gray-700 leading-relaxed mb-6">{t("conversion_intro2", language)}</p>
 
-              <p className="text-gray-700 leading-relaxed mb-6">{t("ecology_intro2", language)}</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 mt-6">{t("conversion_definition", language)}</h3>
 
-              <ul className="space-y-2 mb-6 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-[oklch(0.65_0.18_130)] mr-3 mt-1">•</span>
-                  <span>
-                    <strong>EURO6</strong> —{" "}
-                    {t("ecology_euro6", language).replace("ЕВРО6 — ", "").replace("EURO6 — ", "")}
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[oklch(0.65_0.18_130)] mr-3 mt-1">•</span>
-                  <span>
-                    <strong>EURO4</strong> —{" "}
-                    {t("ecology_euro4", language).replace("ЕВРО4 — ", "").replace("EURO4 — ", "")}
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[oklch(0.65_0.18_130)] mr-3 mt-1">•</span>
-                  <span>
-                    <strong>EURO3</strong> —{" "}
-                    {t("ecology_euro3", language).replace("ЕВРО3 — ", "").replace("EURO3 — ", "")}
-                  </span>
-                </li>
-              </ul>
+              <p className="text-gray-700 leading-relaxed mb-4">{t("conversion_definition", language)}</p>
 
-              <h3 className="text-xl font-bold text-gray-900 mb-4 mt-8">{t("ecology_components_title", language)}</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 mt-8">{t("conversion_what_included", language)}</h3>
 
-              <p className="text-gray-700 leading-relaxed mb-6">{t("ecology_components_intro", language)}</p>
+              <p className="text-gray-700 leading-relaxed mb-4">{t("conversion_includes", language)}</p>
 
               <ul className="space-y-2 mb-6 text-gray-700">
                 <li className="flex items-start">
                   <span className="text-[oklch(0.65_0.18_130)] mr-3 mt-1">•</span>
-                  <span>{t("ecology_comp1", language)}</span>
+                  <span>{t("conversion_1", language)}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[oklch(0.65_0.18_130)] mr-3 mt-1">•</span>
-                  <span>{t("ecology_comp2", language)}</span>
+                  <span>{t("conversion_2", language)}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[oklch(0.65_0.18_130)] mr-3 mt-1">•</span>
-                  <span>{t("ecology_comp3", language)}</span>
+                  <span>{t("conversion_3", language)}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[oklch(0.65_0.18_130)] mr-3 mt-1">•</span>
-                  <span>{t("ecology_comp4", language)}</span>
+                  <span>{t("conversion_4", language)}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[oklch(0.65_0.18_130)] mr-3 mt-1">•</span>
-                  <span>{t("ecology_comp5", language)}</span>
+                  <span>{t("conversion_5", language)}</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[oklch(0.65_0.18_130)] mr-3 mt-1">•</span>
+                  <span>{t("conversion_6", language)}</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[oklch(0.65_0.18_130)] mr-3 mt-1">•</span>
+                  <span>{t("conversion_7", language)}</span>
                 </li>
               </ul>
 
-              <h3 className="text-xl font-bold text-gray-900 mb-4 mt-8">{t("ecology_problems_title", language)}</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4 mt-8">{t("conversion_why_us_title", language)}</h3>
 
-              <p className="text-gray-700 leading-relaxed mb-6">{t("ecology_failure", language)}</p>
+              <p className="text-gray-700 leading-relaxed mb-6">{t("conversion_support", language)}</p>
 
-              <p className="text-gray-700 leading-relaxed mb-6">{t("ecology_adblue", language)}</p>
+              <p className="text-gray-700 leading-relaxed mb-8">{t("conversion_expertise", language)}</p>
 
-              <p className="text-gray-700 leading-relaxed mb-6">{t("ecology_dpf", language)}</p>
-
-              <h3 className="text-xl font-bold text-gray-900 mb-4 mt-8">{t("ecology_solutions_title", language)}</h3>
-
-              <p className="text-[oklch(0.65_0.18_130)] font-semibold text-xl mb-6">
-                {t("ecology_experience", language)}
-              </p>
-
-              <p className="text-gray-700 leading-relaxed mb-6">{t("ecology_expertise", language)}</p>
-
-              <p className="text-gray-700 leading-relaxed">{t("ecology_equipment", language)}</p>
+              <div className="bg-white/70 backdrop-blur-sm border border-[oklch(0.65_0.18_130)]/30 rounded-xl p-6 shadow-lg">
+                <p className="text-2xl font-bold text-[oklch(0.65_0.18_130)]">{t("conversion_price", language)}</p>
+              </div>
             </div>
           </div>
         </div>

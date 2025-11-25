@@ -1,29 +1,28 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import EcologyPage from "./layout"
+import EcologyPage from "@/app/ecology/layout"
 
 export const metadata: Metadata = {
-  title: "Ekologia - DPF, AdBlue, EGR | Usuwanie Systemów Ekologicznych",
+  title: "Экология - DPF, AdBlue, EGR | Удаление Экологических Систем",
   description:
-    "Naprawa i usuwanie systemów ekologicznych: DPF, AdBlue, EGR, katalizator. Rozwiązanie problemów EURO3-EURO6. Poznań.",
+    "Ремонт и удаление экологических систем: DPF, AdBlue, EGR, катализатор. Решение проблем EURO3-EURO6. Познань.",
   keywords: [
-    "usuwanie DPF",
+    "удаление DPF",
     "AdBlue",
     "EGR",
-    "katalizator",
-    "filtr cząstek",
+    "катализатор",
+    "сажевый фильтр",
     "EURO6",
-    "regeneracja DPF",
-    "удаление сажевого фильтра",
+    "регенерация DPF",
+    "usuwanie DPF",
   ],
   openGraph: {
-    title: "Ekologia - DPF, AdBlue, EGR | Autocoder Poznań",
-    description:
-      "Naprawa i usuwanie systemów ekologicznych: DPF, AdBlue, EGR, katalizator. Rozwiązanie problemów EURO3-EURO6.",
-    url: `${SITE_URL}/ecology`,
+    title: "Экология - DPF, AdBlue, EGR | Autocoder Познань",
+    description: "Ремонт и удаление экологических систем: DPF, AdBlue, EGR, катализатор. Решение проблем EURO3-EURO6.",
+    url: `${SITE_URL}/ru/ecology`,
   },
   alternates: {
-    canonical: `${SITE_URL}/ecology`,
+    canonical: `${SITE_URL}/ru/ecology`,
   },
 }
 

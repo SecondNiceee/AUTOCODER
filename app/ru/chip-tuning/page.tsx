@@ -1,27 +1,27 @@
-import { ChipTuningClientPage } from "@/app/ru/chip-tuning/client" // Assuming you'll create this
+import { ChipTuningClientPage } from "@/app/chip-tuning/client"
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
 
 export const metadata: Metadata = {
-  title: "Chip Tuning Poznań | Zwiększenie Mocy | Чип Тюнинг Познань",
+  title: "Чип Тюнинг Познань | Увеличение Мощности | Chip Tuning Poznań",
   description:
-    "Profesjonalny chip tuning (Stage 1) w Poznaniu. Bezpieczne zwiększenie mocy i momentu obrotowego. Mercedes, BMW, VAG. | Профессиональный чип-тюнинг в Познани. Увеличение мощности.",
+    "Профессиональный чип-тюнинг (Stage 1) в Познани. Безопасное увеличение мощности и крутящего момента. Mercedes, BMW, VAG.",
   keywords: [
-    "chip tuning poznań",
-    "chiptuning",
-    "zwiększenie mocy",
-    "stage 1",
     "чип тюнинг познань",
+    "chiptuning",
     "увеличение мощности",
+    "stage 1",
+    "chip tuning poznań",
+    "zwiększenie mocy",
   ],
   openGraph: {
-    title: "Chip Tuning - Zwiększenie Mocy Silnika | Stage 1",
+    title: "Чип Тюнинг - Увеличение Мощности Двигателя | Stage 1",
     description:
-      "Profesjonalny chip tuning Mercedes, BMW, VAG w Poznaniu. Zwiększenie mocy i momentu obrotowego. Stage 1 bez zmian fizycznych. 15 lat doświadczenia.",
-    url: `${SITE_URL}/chip-tuning`,
+      "Профессиональный чип-тюнинг Mercedes, BMW, VAG в Познани. Увеличение мощности и крутящего момента. Stage 1 без физических изменений. 15 лет опыта.",
+    url: `${SITE_URL}/ru/chip-tuning`,
   },
   alternates: {
-    canonical: `${SITE_URL}/chip-tuning`,
+    canonical: `${SITE_URL}/ru/chip-tuning`,
   },
 }
 

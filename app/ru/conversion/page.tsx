@@ -1,27 +1,27 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import ConversionClientPage from "./ConversionClientPage"
+import ConversionClientPage from "@/app/conversion/ConversionClientPage"
 
 export const metadata: Metadata = {
-  title: "Konwersja USA-EU | Adaptacja Samochodów z USA",
+  title: "Конверсия США-ЕС | Адаптация Автомобилей из США",
   description:
-    "Konwersja samochodów z USA na rynek europejski. Programowanie, kodowanie, zmiana jednostek, nawigacja, język interfejsu. Od 200 zł.",
+    "Конверсия автомобилей из США на европейский рынок. Программирование, кодирование, изменение единиц измерения, навигация, язык интерфейса. От 200 зл.",
   keywords: [
-    "konwersja USA EU",
-    "import z USA",
-    "adaptacja samochodu",
-    "konwersja Mercedes",
-    "konwersja BMW",
     "конверсия США ЕС",
+    "импорт из США",
+    "адаптация автомобиля",
+    "конверсия Mercedes",
+    "конверсия BMW",
+    "konwersja USA EU",
   ],
   openGraph: {
-    title: "Konwersja USA-EU | Adaptacja Samochodów z USA | Autocoder",
+    title: "Конверсия США-ЕС | Адаптация Автомобилей из США | Autocoder",
     description:
-      "Konwersja samochodów z USA na rynek europejski. Programowanie, kodowanie, zmiana jednostek, nawigacja.",
-    url: `${SITE_URL}/conversion`,
+      "Конверсия автомобилей из США на европейский рынок. Программирование, кодирование, изменение единиц измерения, навигация.",
+    url: `${SITE_URL}/ru/conversion`,
   },
   alternates: {
-    canonical: `${SITE_URL}/conversion`,
+    canonical: `${SITE_URL}/ru/conversion`,
   },
 }
 

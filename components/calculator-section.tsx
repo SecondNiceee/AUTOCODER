@@ -1,10 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Car, Calendar, Wrench } from 'lucide-react'
+import { Car, Calendar, Wrench, Fuel } from "lucide-react"
 import Image from "next/image"
 import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 interface StagingData {
   hp?: { current: string; tuned: string; increase: string }
@@ -39,30 +40,73 @@ interface Brand {
   models: Model[]
 }
 
+const CALC_TRANSLATIONS = {
+  pl: {
+    stage: "Stage",
+    power: "Moc",
+    torque: "Moment",
+    current: "Seria",
+    tuned: "Mod",
+    diff: "Przyrost",
+    stage_results: "Wyniki modyfikacji",
+  },
+  ru: {
+    stage: "Stage",
+    power: "Мощность",
+    torque: "Крутящий момент",
+    current: "Сток",
+    tuned: "Тюнинг",
+    diff: "Прирост",
+    stage_results: "Результаты чип-тюнинга",
+  },
+}
+
 export function CalculatorSection() {
   const { language } = useLanguage()
   const [data, setData] = useState<Brand[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
   const [selectedBrand, setSelectedBrand] = useState("")
   const [selectedModel, setSelectedModel] = useState("")
   const [selectedYear, setSelectedYear] = useState("")
+  const [selectedFuelType, setSelectedFuelType] = useState("")
   const [selectedEngine, setSelectedEngine] = useState("")
   const [currentEngine, setCurrentEngine] = useState<Engine | null>(null)
 
+  const tr = CALC_TRANSLATIONS[language as keyof typeof CALC_TRANSLATIONS] || CALC_TRANSLATIONS.pl
+
+  // Загрузка данных
   useEffect(() => {
-    fetch("/calculator/output.json")
-      .then((res) => res.json())
-      .then(setData)
-      .catch((err) => console.error("Error loading calculator data:", err))
+    const fetchData = async () => {
+      try {
+        const res = await fetch("/calculator/output.json")
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
+        const jsonData: Brand[] = await res.json()
+        setData(jsonData)
+      } catch (err) {
+        console.error("Failed to load output.json:", err)
+        setError("Не удалось загрузить данные калькулятора.")
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchData()
   }, [])
 
-  const brands = data
-  const models = data.find((b) => b.brandId === selectedBrand)?.models || []
-  const years = models.find((m) => m.modelId === selectedModel)?.years || []
-  const engines = years.find((y) => y.yearId === selectedYear)?.engines || []
+  // Получение зависимых данных
+  const models = data.find((b) => String(b.brandId) === selectedBrand)?.models || []
 
+  const years = models.find((m) => String(m.modelId) === selectedModel)?.years || []
+  const allEnginesInYear = years.find((y) => String(y.yearId) === selectedYear)?.engines || []
+  const fuelTypes = Array.from(new Set(allEnginesInYear.map((e) => e.fuelType))).filter(Boolean)
+  const engines = allEnginesInYear.filter((e) => e.fuelType === selectedFuelType)
+
+  // Обновление текущего двигателя
   useEffect(() => {
     if (selectedEngine) {
-      const engine = engines.find((e) => e.id === selectedEngine)
+      const engine = engines.find((e) => String(e.id) === selectedEngine)
       setCurrentEngine(engine || null)
     } else {
       setCurrentEngine(null)
@@ -73,6 +117,7 @@ export function CalculatorSection() {
     setSelectedBrand(value)
     setSelectedModel("")
     setSelectedYear("")
+    setSelectedFuelType("")
     setSelectedEngine("")
     setCurrentEngine(null)
   }
@@ -80,14 +125,42 @@ export function CalculatorSection() {
   const handleModelChange = (value: string) => {
     setSelectedModel(value)
     setSelectedYear("")
+    setSelectedFuelType("")
     setSelectedEngine("")
     setCurrentEngine(null)
   }
 
   const handleYearChange = (value: string) => {
     setSelectedYear(value)
+    setSelectedFuelType("")
     setSelectedEngine("")
     setCurrentEngine(null)
+  }
+
+  const handleFuelChange = (value: string) => {
+    setSelectedFuelType(value)
+    setSelectedEngine("")
+    setCurrentEngine(null)
+  }
+
+  if (loading) {
+    return (
+      <section className="relative py-12 px-4 bg-black">
+        <div className="container mx-auto max-w-4xl text-center">
+          <p className="text-white">Загрузка данных...</p>
+        </div>
+      </section>
+    )
+  }
+
+  if (error) {
+    return (
+      <section className="relative py-12 px-4 bg-black">
+        <div className="container mx-auto max-w-4xl text-center">
+          <p className="text-red-400">{error}</p>
+        </div>
+      </section>
+    )
   }
 
   return (
@@ -100,7 +173,6 @@ export function CalculatorSection() {
           className="object-cover object-center"
           quality={90}
         />
-        {/* Heavy dark overlay */}
         <div className="absolute inset-0 bg-black/85"></div>
       </div>
 
@@ -113,117 +185,149 @@ export function CalculatorSection() {
 
         <div className="bg-zinc-900 rounded-2xl p-4 sm:p-5 md:p-6 shadow-2xl border border-zinc-800 fade-in-up">
           <div className="space-y-4 sm:space-y-5">
-            {/* Brand Selection */}
+            {/* Brand */}
             <div>
               <label className="flex items-center gap-1 text-sm font-semibold text-gray-300 mb-2">
                 <Car className="w-4 h-4 text-[oklch(0.65_0.18_130)] flex-shrink-0" />
                 <span className="ml-1">{t("select_brand", language)}</span>
               </label>
-              <select
-                value={selectedBrand}
-                onChange={(e) => handleBrandChange(e.target.value)}
-                className="w-full p-3 bg-zinc-800 text-white rounded-lg border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-[oklch(0.65_0.18_130)] focus:border-transparent transition-all appearance-none pr-10 cursor-pointer"
-                style={{
-                  backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "right 0.75rem center",
-                  backgroundSize: "1.5em 1.5em",
-                  paddingRight: "2.5rem",
-                }}
-              >
-                <option value="">{t("select_brand", language)}</option>
-                {brands.map((brand) => (
-                  <option key={brand.brandId} value={brand.brandId}>
-                    {brand.brandName}
-                  </option>
-                ))}
-              </select>
+              <Select value={selectedBrand} onValueChange={handleBrandChange}>
+                <SelectTrigger className="w-full h-12 bg-zinc-800 text-white border-zinc-700 focus:ring-2 focus:ring-[oklch(0.65_0.18_130)] focus:ring-offset-0 focus:ring-offset-transparent">
+                  <SelectValue placeholder={t("select_brand", language)} />
+                </SelectTrigger>
+                <SelectContent className="bg-zinc-800 border-zinc-700 text-white">
+                  {data.map((brand) => (
+                    <SelectItem
+                      key={brand.brandId}
+                      value={String(brand.brandId)}
+                      className="focus:bg-zinc-700 focus:text-white cursor-pointer"
+                    >
+                      {brand.brandName}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
 
-            {/* Model Selection */}
+            {/* Model */}
             {selectedBrand && (
               <div className="animate-in fade-in slide-in-from-top-2 duration-300">
                 <label className="flex items-center gap-2 text-sm font-semibold text-gray-300 mb-2">
                   <Car className="w-4 h-4 text-[oklch(0.65_0.18_130)]" />
                   {t("select_model", language)}
                 </label>
-                <select
-                  value={selectedModel}
-                  onChange={(e) => handleModelChange(e.target.value)}
-                  className="w-full p-3 bg-zinc-800 text-white rounded-lg border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-[oklch(0.65_0.18_130)] focus:border-transparent transition-all cursor-pointer"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "right 0.75rem center",
-                    backgroundSize: "1.5em 1.5em",
-                    paddingRight: "2.5rem",
-                  }}
-                >
-                  <option value="">{t("select_model", language)}</option>
-                  {models.map((model) => (
-                    <option key={model.modelId} value={model.modelId}>
-                      {model.modelName}
-                    </option>
-                  ))}
-                </select>
+                <Select value={selectedModel} onValueChange={handleModelChange}>
+                  <SelectTrigger className="w-full h-12 bg-zinc-800 text-white border-zinc-700 focus:ring-2 focus:ring-[oklch(0.65_0.18_130)] focus:ring-offset-0 focus:ring-offset-transparent">
+                    <SelectValue placeholder={t("select_model", language)} />
+                  </SelectTrigger>
+                  <SelectContent className="bg-zinc-800 border-zinc-700 text-white">
+                    {models.length > 0 ? (
+                      models.map((model) => (
+                        <SelectItem
+                          key={model.modelId}
+                          value={String(model.modelId)}
+                          className="focus:bg-zinc-700 focus:text-white cursor-pointer"
+                        >
+                          {model.modelName}
+                        </SelectItem>
+                      ))
+                    ) : (
+                      <div className="p-2 text-sm text-gray-400">{t("no_models", language) || "Нет моделей"}</div>
+                    )}
+                  </SelectContent>
+                </Select>
               </div>
             )}
 
-            {/* Year Selection */}
+            {/* Year */}
             {selectedModel && (
               <div className="animate-in fade-in slide-in-from-top-2 duration-300">
                 <label className="flex items-center gap-2 text-sm font-semibold text-gray-300 mb-2">
                   <Calendar className="w-4 h-4 text-[oklch(0.65_0.18_130)]" />
                   {t("select_year", language)}
                 </label>
-                <select
-                  value={selectedYear}
-                  onChange={(e) => handleYearChange(e.target.value)}
-                  className="w-full p-3 bg-zinc-800 text-white rounded-lg border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-[oklch(0.65_0.18_130)] focus:border-transparent transition-all cursor-pointer"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "right 0.75rem center",
-                    backgroundSize: "1.5em 1.5em",
-                    paddingRight: "2.5rem",
-                  }}
-                >
-                  <option value="">{t("select_year", language)}</option>
-                  {years.map((year) => (
-                    <option key={year.yearId} value={year.yearId}>
-                      {year.yearName}
-                    </option>
-                  ))}
-                </select>
+                <Select value={selectedYear} onValueChange={handleYearChange}>
+                  <SelectTrigger className="w-full h-12 bg-zinc-800 text-white border-zinc-700 focus:ring-2 focus:ring-[oklch(0.65_0.18_130)] focus:ring-offset-0 focus:ring-offset-transparent">
+                    <SelectValue placeholder={t("select_year", language)} />
+                  </SelectTrigger>
+                  <SelectContent className="bg-zinc-800 border-zinc-700 text-white">
+                    {years.length > 0 ? (
+                      years.map((year) => (
+                        <SelectItem
+                          key={year.yearId}
+                          value={String(year.yearId)}
+                          className="focus:bg-zinc-700 focus:text-white cursor-pointer"
+                        >
+                          {year.yearName}
+                        </SelectItem>
+                      ))
+                    ) : (
+                      <div className="p-2 text-sm text-gray-400">{t("no_years", language) || "Нет годов"}</div>
+                    )}
+                  </SelectContent>
+                </Select>
               </div>
             )}
 
-            {/* Engine Selection */}
+            {/* Fuel Type */}
             {selectedYear && (
+              <div className="animate-in fade-in slide-in-from-top-2 duration-300">
+                <label className="flex items-center gap-2 text-sm font-semibold text-gray-300 mb-2">
+                  <Fuel className="w-4 h-4 text-[oklch(0.65_0.18_130)]" />
+                  {t("select_fuel", language) || "Select Fuel"}
+                </label>
+                <Select value={selectedFuelType} onValueChange={handleFuelChange}>
+                  <SelectTrigger className="w-full h-12 bg-zinc-800 text-white border-zinc-700 focus:ring-2 focus:ring-[oklch(0.65_0.18_130)] focus:ring-offset-0 focus:ring-offset-transparent">
+                    <SelectValue placeholder={t("select_fuel", language) || "Select Fuel Type"} />
+                  </SelectTrigger>
+                  <SelectContent className="bg-zinc-800 border-zinc-700 text-white">
+                    {fuelTypes.length > 0 ? (
+                      fuelTypes.map((fuel) => (
+                        <SelectItem
+                          key={fuel}
+                          value={String(fuel)}
+                          className="focus:bg-zinc-700 focus:text-white cursor-pointer"
+                        >
+                          {fuel}
+                        </SelectItem>
+                      ))
+                    ) : (
+                      <div className="p-2 text-sm text-gray-400">
+                        {t("no_fuel_types", language) || "Нет типов топлива"}
+                      </div>
+                    )}
+                  </SelectContent>
+                </Select>
+              </div>
+            )}
+
+            {/* Engine */}
+            {selectedFuelType && (
               <div className="animate-in fade-in slide-in-from-top-2 duration-300">
                 <label className="flex items-center gap-2 text-sm font-semibold text-gray-300 mb-2">
                   <Wrench className="w-4 h-4 text-[oklch(0.65_0.18_130)]" />
                   {t("select_engine", language)}
                 </label>
-                <select
-                  value={selectedEngine}
-                  onChange={(e) => setSelectedEngine(e.target.value)}
-                  className="w-full p-3 bg-zinc-800 text-white rounded-lg border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-[oklch(0.65_0.18_130)] focus:border-transparent transition-all appearance-none pr-10 cursor-pointer"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "right 0.75rem center",
-                    backgroundSize: "1.5em 1.5em",
-                    paddingRight: "2.5rem",
-                  }}
-                >
-                  <option value="">{t("select_engine", language)}</option>
-                  {engines.map((engine) => (
-                    <option key={engine.id} value={engine.id}>
-                      {engine.name}
-                    </option>
-                  ))}
-                </select>
+                <Select value={selectedEngine} onValueChange={setSelectedEngine}>
+                  <SelectTrigger className="w-full h-12 bg-zinc-800 text-white border-zinc-700 focus:ring-2 focus:ring-[oklch(0.65_0.18_130)] focus:ring-offset-0 focus:ring-offset-transparent">
+                    <SelectValue placeholder={t("select_engine", language)} />
+                  </SelectTrigger>
+                  <SelectContent className="bg-zinc-800 border-zinc-700 text-white">
+                    {engines.length > 0 ? (
+                      engines.map((engine) => (
+                        <SelectItem
+                          key={engine.id}
+                          value={String(engine.id)}
+                          className="focus:bg-zinc-700 focus:text-white cursor-pointer"
+                        >
+                          {engine.name}
+                        </SelectItem>
+                      ))
+                    ) : (
+                      <div className="p-2 text-sm text-gray-400">{t("no_engines", language) || "Нет двигателей"}</div>
+                    )}
+                  </SelectContent>
+                </Select>
               </div>
             )}
           </div>
@@ -232,46 +336,66 @@ export function CalculatorSection() {
           {currentEngine && (
             <div className="mt-4 sm:mt-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
               <div className="bg-zinc-800 rounded-xl p-4 sm:p-5 border border-zinc-700">
-                {currentEngine.staging && currentEngine.staging["Stage 1"] && (
-                  <div className="mt-3 sm:mt-4">
-                    <h4 className="text-base sm:text-lg font-semibold text-[oklch(0.65_0.18_130)] mb-3">
-                      {t("stage_results", language)}
+                {currentEngine.staging && Object.keys(currentEngine.staging).length > 0 ? (
+                  <div className="mt-3 sm:mt-4 overflow-x-auto">
+                    <h4 className="text-xl sm:text-2xl font-semibold text-[oklch(0.65_0.18_130)] mb-4 text-center">
+                      {tr.stage_results}
                     </h4>
-                    <div className="bg-zinc-900 rounded-lg p-4 border border-zinc-700">
-                      <div className="grid grid-cols-2 gap-4 text-center">
-                        {/* HP Section */}
-                        <div className="space-y-1">
-                          <p className="text-xs text-gray-400 uppercase">{t("power", language)}</p>
-                          <p className="text-sm text-gray-300">
-                            {currentEngine.staging["Stage 1"].hp?.current || "Н/Д"} {t("hp", language)}
-                          </p>
-                          <p className="text-lg font-bold text-white">
-                            {currentEngine.staging["Stage 1"].hp?.tuned || "Н/Д"} {t("hp", language)}
-                          </p>
-                          <p className="text-sm font-semibold text-[oklch(0.65_0.18_130)]">
-                            +{currentEngine.staging["Stage 1"].hp?.increase || "Н/Д"}
-                          </p>
-                        </div>
-
-                        {/* NM Section */}
-                        <div className="space-y-1">
-                          <p className="text-xs text-gray-400 uppercase">{t("torque", language)}</p>
-                          <p className="text-sm text-gray-300">
-                            {currentEngine.staging["Stage 1"].nm?.current || "Н/Д"} {t("nm", language)}
-                          </p>
-                          <p className="text-lg font-bold text-white">
-                            {currentEngine.staging["Stage 1"].nm?.tuned || "Н/Д"} {t("nm", language)}
-                          </p>
-                          <p className="text-sm font-semibold text-[oklch(0.65_0.18_130)]">
-                            +{currentEngine.staging["Stage 1"].nm?.increase || "Н/Д"}
-                          </p>
-                        </div>
-                      </div>
-                      <p className="text-xs text-gray-500 mt-4 text-center italic">
-                        {t("results_note", language)}
-                      </p>
-                    </div>
+                    <table className="w-full text-base sm:text-lg text-left border-collapse min-w-[600px]">
+                      <thead>
+                        <tr className="bg-zinc-900 text-gray-300">
+                          <th className="p-4 border border-zinc-700 font-semibold">{tr.stage}</th>
+                          <th className="p-4 border border-zinc-700 font-semibold">
+                            {tr.power} <span className="text-sm font-normal text-gray-500">({tr.current})</span>
+                          </th>
+                          <th className="p-4 border border-zinc-700 font-semibold">
+                            {tr.power} <span className="text-sm font-normal text-gray-500">({tr.tuned})</span>
+                          </th>
+                          <th className="p-4 border border-zinc-700 font-semibold text-[oklch(0.65_0.18_130)]">
+                            {tr.diff}
+                          </th>
+                          <th className="p-4 border border-zinc-700 font-semibold">
+                            {tr.torque} <span className="text-sm font-normal text-gray-500">({tr.current})</span>
+                          </th>
+                          <th className="p-4 border border-zinc-700 font-semibold">
+                            {tr.torque} <span className="text-sm font-normal text-gray-500">({tr.tuned})</span>
+                          </th>
+                          <th className="p-4 border border-zinc-700 font-semibold text-[oklch(0.65_0.18_130)]">
+                            {tr.diff}
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Object.entries(currentEngine.staging)
+                          .filter(([stageName]) => stageName === "1")
+                          .map(([stageName, stageData]) => (
+                            <tr key={stageName} className="hover:bg-zinc-700/50 transition-colors text-white">
+                              <td className="p-4 border border-zinc-700 font-bold text-xl">
+                                {stageName.toUpperCase()}
+                              </td>
+                              <td className="p-4 border border-zinc-700 text-xl">{stageData.hp?.current || "-"}</td>
+                              <td className="p-4 border border-zinc-700 font-bold text-xl">
+                                {stageData.hp?.tuned || "-"}
+                              </td>
+                              <td className="p-4 border border-zinc-700 text-[oklch(0.65_0.18_130)] font-bold text-xl">
+                                +{stageData.hp?.increase || "-"}
+                              </td>
+                              <td className="p-4 border border-zinc-700 text-xl">{stageData.nm?.current || "-"}</td>
+                              <td className="p-4 border border-zinc-700 font-bold text-xl">
+                                {stageData.nm?.tuned || "-"}
+                              </td>
+                              <td className="p-4 border border-zinc-700 text-[oklch(0.65_0.18_130)] font-bold text-xl">
+                                +{stageData.nm?.increase || "-"}
+                              </td>
+                            </tr>
+                          ))}
+                      </tbody>
+                    </table>
                   </div>
+                ) : (
+                  <p className="text-gray-400 italic text-center">
+                    {t("no_stages_available", language) || "No tuning stages available"}
+                  </p>
                 )}
               </div>
             </div>

@@ -11,8 +11,15 @@ export function HeroSection() {
     <section
       id="hero"
       className="relative flex items-center justify-center overflow-hidden bg-black"
-      style={{ minHeight: "92vh" }}
+      style={{ minHeight: "65vh" }}
     >
+      <style jsx>{`
+        @media (min-width: 1024px) {
+          section#hero {
+            min-height: 92vh !important;
+          }
+        }
+      `}</style>
       {/* Content - centered text vertically on screen */}
       <div className="relative flex flex-col gap-9 z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex justify-center">
@@ -21,7 +28,8 @@ export function HeroSection() {
           </div>
         </div>
 
-        <p
+        {/* Changed p to h2 for electronics and brands text */}
+        <h2
           className="text-[#a0e308] max-w-[970px] mx-auto tracking-widest uppercase px-4"
           style={{
             fontSize: "clamp(12px, 3vw, 24px)",
@@ -32,7 +40,7 @@ export function HeroSection() {
           }}
         >
           {t("electronics", language)}, {t("brands", language)}
-        </p>
+        </h2>
 
         <div className="flex justify-center px-4">
           <Image
@@ -45,7 +53,8 @@ export function HeroSection() {
           />
         </div>
 
-        <p
+        {/* Changed p to h1 for services list text */}
+        <h1
           className="text-white mx-auto md:mt-[50px] max-w-[860px] px-4"
           style={{
             fontSize: "clamp(15px, 3vw, 25px)",
@@ -57,7 +66,7 @@ export function HeroSection() {
           }}
         >
           {t("services_list", language)} {t("services_list_2", language)} {t("services_list_3", language)}
-        </p>
+        </h1>
       </div>
     </section>
   )

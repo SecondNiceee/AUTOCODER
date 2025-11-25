@@ -1,29 +1,29 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import DiagnosticsClientPage from "./_client-page"
+import DiagnosticsClientPage from "@/app/diagnostics/_client-page"
 
 export const metadata: Metadata = {
-  title: "Diagnostyka Samochodowa | Sprzęt Dealerski | Mercedes, BMW, VAG",
+  title: "Диагностика Автомобилей | Дилерское Оборудование | Mercedes, BMW, VAG",
   description:
-    "Profesjonalna diagnostyka samochodowa w Poznaniu. Sprzęt dealerski: DAS, Xentry, ODIS, ISTA. Mercedes, BMW, VAG. Dokładna diagnoza problemów.",
+    "Профессиональная диагностика автомобилей в Познани. Дилерское оборудование: DAS, Xentry, ODIS, ISTA. Mercedes, BMW, VAG. Точная диагностика проблем.",
   keywords: [
-    "diagnostyka samochodowa",
-    "diagnostyka Mercedes",
-    "diagnostyka BMW",
+    "диагностика автомобилей",
+    "диагностика Mercedes",
+    "диагностика BMW",
     "DAS",
     "Xentry",
     "ODIS",
     "ISTA",
-    "диагностика автомобилей",
+    "diagnostyka samochodowa",
   ],
   openGraph: {
-    title: "Diagnostyka Samochodowa | Sprzęt Dealerski | Autocoder Poznań",
+    title: "Диагностика Автомобилей | Дилерское Оборудование | Autocoder Познань",
     description:
-      "Profesjonalna diagnostyka samochodowa. Sprzęt dealerski: DAS, Xentry, ODIS, ISTA. Mercedes, BMW, VAG.",
-    url: `${SITE_URL}/diagnostics`,
+      "Профессиональная диагностика автомобилей. Дилерское оборудование: DAS, Xentry, ODIS, ISTA. Mercedes, BMW, VAG.",
+    url: `${SITE_URL}/ru/diagnostics`,
   },
   alternates: {
-    canonical: `${SITE_URL}/diagnostics`,
+    canonical: `${SITE_URL}/ru/diagnostics`,
   },
 }
 

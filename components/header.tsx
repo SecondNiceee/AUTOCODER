@@ -1,20 +1,41 @@
 "use client"
 
-import { Phone, Instagram } from 'lucide-react'
+import { Phone, Instagram } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 import { MobileMenu } from "@/components/mobile-menu"
+import { usePathname, useRouter } from "next/navigation"
 
 export function Header() {
   const { language, setLanguage } = useLanguage()
+  const pathname = usePathname()
+  const router = useRouter()
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView({ behavior: "smooth" })
     }
+  }
+
+  const handleLanguageSwitch = (newLang: "pl" | "ru") => {
+    if (newLang === "ru") {
+      // Switch to Russian - navigate to /ru
+      if (pathname === "/") {
+        router.push("/ru")
+      } else if (!pathname.startsWith("/ru")) {
+        router.push(`/ru${pathname}`)
+      }
+    } else {
+      // Switch to Polish - navigate to /
+      if (pathname.startsWith("/ru")) {
+        const newPath = pathname.replace(/^\/ru/, "") || "/"
+        router.push(newPath)
+      }
+    }
+    setLanguage(newLang)
   }
 
   return (
@@ -23,7 +44,7 @@ export function Header() {
       <header className="bg-black backdrop-blur-md border-b w-full border-border sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center hover:opacity-80 transition">
+            <Link href={language === "ru" ? "/ru" : "/"} className="flex items-center hover:opacity-80 transition">
               <Image
                 src="/autocoder-logo.png"
                 alt="Autocoder Logo"
@@ -37,13 +58,22 @@ export function Header() {
             <MobileMenu />
 
             <nav className="hidden md:flex items-center gap-8">
-              <button onClick={() => scrollToSection('hero')} className="text-accent hover:text-accent/80 font-medium transition cursor-pointer">
+              <button
+                onClick={() => scrollToSection("hero")}
+                className="text-accent hover:text-accent/80 font-medium transition cursor-pointer"
+              >
                 {t("home", language)}
               </button>
-              <button onClick={() => scrollToSection('services')} className="text-foreground hover:text-accent font-medium transition cursor-pointer">
+              <button
+                onClick={() => scrollToSection("services")}
+                className="text-foreground hover:text-accent font-medium transition cursor-pointer"
+              >
                 {t("services", language)}
               </button>
-              <button onClick={() => scrollToSection('contacts')} className="text-foreground hover:text-accent font-medium transition cursor-pointer">
+              <button
+                onClick={() => scrollToSection("contacts")}
+                className="text-foreground hover:text-accent font-medium transition cursor-pointer"
+              >
                 {t("contacts", language)}
               </button>
             </nav>
@@ -68,7 +98,7 @@ export function Header() {
 
               <div className="flex items-center gap-3 px-4 py-2 bg-zinc-900 rounded-lg border border-zinc-800 hover:border-accent transition-colors">
                 <button
-                  onClick={() => setLanguage("pl")}
+                  onClick={() => handleLanguageSwitch("pl")}
                   className={`text-sm font-medium transition cursor-pointer ${
                     language === "pl" ? "text-accent" : "text-foreground hover:text-accent"
                   }`}
@@ -77,7 +107,7 @@ export function Header() {
                 </button>
                 <span className="text-foreground text-sm">|</span>
                 <button
-                  onClick={() => setLanguage("ru")}
+                  onClick={() => handleLanguageSwitch("ru")}
                   className={`text-sm font-medium transition cursor-pointer ${
                     language === "ru" ? "text-accent" : "text-foreground hover:text-accent"
                   }`}

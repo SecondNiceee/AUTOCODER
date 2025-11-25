@@ -1,13 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { LanguageProvider } from "@/components/language-context"
 import { Header } from "@/components/header"
+import "./globals.css"
 import { SITE_URL } from "@/lib/constants"
-import { LanguageProvider } from "@/components/pl-language-context"
+
+const inter = Inter({ subsets: ["latin", "cyrillic"] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`${SITE_URL}/pl`),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Autocoder - Chip Tuning, Diagnostyka, Naprawa Elektroniki | Poznań",
     template: "%s | Autocoder Poznań",
@@ -25,6 +29,9 @@ export const metadata: Metadata = {
     "immobiliser",
     "konwersja USA EU",
     "ekologia DPF AdBlue",
+    "чип тюнинг Познань",
+    "диагностика автомобилей",
+    "ремонт электроники Mercedes",
   ],
   authors: [{ name: "Autocoder" }],
   creator: "Autocoder",
@@ -37,14 +44,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pl_PL",
-    url: `${SITE_URL}/pl`,
+    alternateLocale: ["ru_RU"],
+    url: SITE_URL,
     siteName: "Autocoder",
     title: "Autocoder - Chip Tuning, Diagnostyka, Naprawa Elektroniki | Poznań",
     description:
       "Profesjonalny chip tuning, diagnostyka, naprawa elektroniki samochodowej Mercedes, BMW, VAG w Poznaniu. 15 lat doświadczenia.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.jpg", // Add your Open Graph image
         width: 1200,
         height: 630,
         alt: "Autocoder - Profesjonalna elektronika samochodowa",
@@ -56,7 +64,7 @@ export const metadata: Metadata = {
     title: "Autocoder - Chip Tuning, Diagnostyka, Naprawa Elektroniki",
     description:
       "Profesjonalny chip tuning, diagnostyka, naprawa elektroniki samochodowej Mercedes, BMW, VAG w Poznaniu.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.jpg"], // Add your Twitter Card image
   },
   robots: {
     index: true,
@@ -69,16 +77,21 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "your-google-verification-code", // Add your Google Search Console verification code
+    // yandex: 'your-yandex-verification-code', // Add Yandex verification if needed
+  },
   alternates: {
-    canonical: `${SITE_URL}/pl`,
+    canonical: SITE_URL,
     languages: {
-      pl: `${SITE_URL}/pl`,
-      "x-default": SITE_URL,
+      pl: `${SITE_URL}?lang=pl`,
+      ru: `${SITE_URL}?lang=ru`,
     },
   },
+  generator: "v0.app",
 }
 
-export default function PlLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
@@ -155,12 +168,29 @@ export default function PlLayout({
   }
 
   return (
-    <LanguageProvider>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-      <Header />
-      {children}
-      <WhatsAppButton />
-      <Analytics />
-    </LanguageProvider>
+    <html lang="pl" className="dark">
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BV3GW9S4ZC"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-BV3GW9S4ZC');
+            `,
+          }}
+        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      </head>
+      <body className={`${inter.className} antialiased`}>
+        <LanguageProvider>
+          <Header />
+          {children}
+          <WhatsAppButton />
+        </LanguageProvider>
+        <Analytics />
+      </body>
+    </html>
   )
 }
