@@ -6,6 +6,17 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
 
+  turbopack: {},
+
+  experimental: {
+    optimizePackageImports: [
+      'lucide-react',
+      'class-variance-authority',
+      'clsx',
+      'tailwind-merge'
+    ],
+  },
+
   compress: true,
   poweredByHeader: false,
   generateEtags: false,
@@ -17,16 +28,6 @@ const nextConfig = {
 
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
-
-  experimental: {
-    optimizePackageImports: [
-      'lucide-react',
-      'class-variance-authority',
-      'clsx',
-      'tailwind-merge'
-    ],
-    cssChunking: false,
-  },
 };
 
 export default nextConfig;

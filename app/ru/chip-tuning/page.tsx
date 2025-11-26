@@ -1,4 +1,4 @@
-import { ChipTuningClientPage } from "@/app/chip-tuning/client"
+import { ChipTuningClientPage } from "@/app/(pl)/chip-tuning/client"
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
 

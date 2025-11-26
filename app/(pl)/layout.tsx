@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { LanguageProvider } from "@/components/language-context"
 import { Header } from "@/components/header"
-import "./globals.css"
+import "../globals.css"
 import { SITE_URL } from "@/lib/constants"
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] })

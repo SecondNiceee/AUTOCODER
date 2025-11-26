@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import EcologyPage from "@/app/ecology/layout"
+import EcologyPage from "@/app/(pl)/ecology/layout"
 
 export const metadata: Metadata = {
   title: "Экология - DPF, AdBlue, EGR | Удаление Экологических Систем",

@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import DiagnosticsClientPage from "@/app/diagnostics/_client-page"
+import DiagnosticsClientPage from "@/app/(pl)/diagnostics/_client-page"
 
 export const metadata: Metadata = {
   title: "Диагностика Автомобилей | Дилерское Оборудование | Mercedes, BMW, VAG",
