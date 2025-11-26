@@ -3,11 +3,10 @@
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 
 export default function DiagnosticsClientPage() {
-  const { language } = useLanguage()
+  const language = "pl"
 
   return (
     <main className="bg-white min-h-screen">

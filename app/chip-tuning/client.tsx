@@ -7,7 +7,7 @@ import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 
 export function ChipTuningClientPage() {
-  const { language } = useLanguage()
+   const language = "pl"
 
   return (
     <main className="bg-white min-h-screen">

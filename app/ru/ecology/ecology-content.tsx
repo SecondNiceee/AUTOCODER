@@ -7,7 +7,7 @@ import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 
 export default function EcologyContent() {
-  const { language } = useLanguage()
+  const language = "ru";
 
   return (
     <main className="bg-white min-h-screen">

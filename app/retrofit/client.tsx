@@ -3,12 +3,10 @@
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 
 export default function RetrofitClientPage() {
-  const { language } = useLanguage()
-
+  const language = "pl"
   return (
     <main className="bg-white min-h-screen">
       <div className="relative py-16 sm:py-20 md:py-24 overflow-hidden">

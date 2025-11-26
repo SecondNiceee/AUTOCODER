@@ -13,25 +13,31 @@ const inter = Inter({ subsets: ["latin", "cyrillic"] })
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Autocoder - Chip Tuning, Diagnostyka, Naprawa Elektroniki | Poznań",
+    default: "Autocoder – Chip Tuning, Ekologia, Diagnostyka, Naprawa Elektroniki, Retrofit, Konwersja, Kodowanie, Immobiliser, Swap Silnika | Poznań",
     template: "%s | Autocoder Poznań",
   },
   description:
-    "Profesjonalny chip tuning, diagnostyka, naprawa elektroniki samochodowej Mercedes, BMW, VAG w Poznaniu. 15 lat doświadczenia. Retrofit, kodowanie, programowanie, swap silników.",
+  "Autocoder w Poznaniu oferuje kompleksowe usługi motoryzacyjne: chip tuning, usuwanie ekologii (DPF/AdBlue/EGR), diagnostykę, naprawę elektroniki, retrofit, konwersję USA/EU, kodowanie, obsługę immobiliserów i swap silnika. 15 lat doświadczenia w obsłudze Mercedes, BMW i VAG.",
   keywords: [
     "chip tuning Poznań",
+    "usuwanie ekologii Poznań",
     "diagnostyka samochodowa Poznań",
+    "naprawa elektroniki samochodowej Poznań",
+    "retrofit samochodowy Poznań",
+    "konwersja USA EU Poznań",
+    "kodowanie samochodów Poznań",
+    "immobiliser Poznań",
+    "swap silnika Poznań",
     "naprawa elektroniki Mercedes",
     "naprawa elektroniki BMW",
-    "kodowanie samochodów",
-    "retrofit Poznań",
-    "swap silnika",
-    "immobiliser",
-    "konwersja USA EU",
-    "ekologia DPF AdBlue",
+    "serwis VAG Poznań",
+    "DPF off Poznań",
+    "AdBlue off Poznań",
+    "EGR off Poznań",
     "чип тюнинг Познань",
-    "диагностика автомобилей",
-    "ремонт электроники Mercedes",
+    "удаление экологии Познань",
+    "диагностика автомобилей Познань",
+    "ремонт автоэлектроники Познань",
   ],
   authors: [{ name: "Autocoder" }],
   creator: "Autocoder",
@@ -52,7 +58,7 @@ export const metadata: Metadata = {
       "Profesjonalny chip tuning, diagnostyka, naprawa elektroniki samochodowej Mercedes, BMW, VAG w Poznaniu. 15 lat doświadczenia.",
     images: [
       {
-        url: "/og-image.jpg", // Add your Open Graph image
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Autocoder - Profesjonalna elektronika samochodowa",
@@ -64,7 +70,7 @@ export const metadata: Metadata = {
     title: "Autocoder - Chip Tuning, Diagnostyka, Naprawa Elektroniki",
     description:
       "Profesjonalny chip tuning, diagnostyka, naprawa elektroniki samochodowej Mercedes, BMW, VAG w Poznaniu.",
-    images: ["/og-image.jpg"], // Add your Twitter Card image
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -78,9 +84,10 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code", // Add your Google Search Console verification code
-    // yandex: 'your-yandex-verification-code', // Add Yandex verification if needed
+    google: "your-google-verification-code",
+    // yandex: 'your-yandex-verification-code',
   },
+
   alternates: {
     canonical: SITE_URL,
     languages: {
@@ -88,7 +95,7 @@ export const metadata: Metadata = {
       ru: `${SITE_URL}?lang=ru`,
     },
   },
-  generator: "v0.app",
+  generator: "Next.js",
 }
 
 export default function RootLayout({
@@ -98,10 +105,9 @@ export default function RootLayout({
 }>) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "AutomotiveBusiness",
+    "@type": "AutoRepair",
     name: "Autocoder",
     image: `${SITE_URL}/logo.jpg`,
-    "@id": SITE_URL,
     url: SITE_URL,
     telephone: "+48793058343",
     address: {
@@ -116,15 +122,16 @@ export default function RootLayout({
       latitude: 52.4139,
       longitude: 16.8733,
     },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "18:00",
-      },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+    sameAs: [
+      "https://www.instagram.com/autocoder_pl/",
+      "https://wa.me/48793058343",
     ],
-    sameAs: ["https://www.instagram.com/autocoder_pl/", "https://wa.me/48793058343"],
     priceRange: "$$",
     aggregateRating: {
       "@type": "AggregateRating",
@@ -165,11 +172,23 @@ export default function RootLayout({
         },
       ],
     },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": SITE_URL,
+    },
   }
 
   return (
     <html lang="pl" className="dark">
       <head>
+        {/* Favicon — абсолютный путь через public */}
+        <link rel="icon" href={`${SITE_URL}/favicon.ico`} />
+
+        {/* Required meta tags */}
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-BV3GW9S4ZC"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -181,7 +200,14 @@ export default function RootLayout({
             `,
           }}
         />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
       </head>
       <body className={`${inter.className} antialiased`}>
         <LanguageProvider>
