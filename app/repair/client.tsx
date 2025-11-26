@@ -89,7 +89,6 @@ export default function RepairClientPage() {
         </div>
       </div>
 
-      <Footer />
     </main>
   )
 }

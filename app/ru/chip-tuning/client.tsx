@@ -1,6 +1,6 @@
 
 
-import { Footer } from "@/components/footer"
+
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { t } from "@/lib/translations"
@@ -129,8 +129,6 @@ export function ChipTuningClientPage() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </main>
   )
 }

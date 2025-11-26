@@ -104,7 +104,6 @@ export default function ConversionClientPage() {
         </div>
       </div>
 
-      <Footer />
     </main>
   )
 }

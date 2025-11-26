@@ -1,13 +1,11 @@
 "use client"
 
-import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import { useLanguage } from "@/components/ru-language-context"
 import { t } from "@/lib/translations"
 
 export default function SwapPage() {
-  const { language } = useLanguage()
+  const language = "ru"
 
   return (
     <main className="bg-white min-h-screen">
@@ -92,7 +90,7 @@ export default function SwapPage() {
         </div>
       </div>
 
-      <Footer />
+
     </main>
   )
 }

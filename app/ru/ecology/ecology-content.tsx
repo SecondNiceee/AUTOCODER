@@ -1,9 +1,7 @@
 "use client"
 
-import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 
 export default function EcologyContent() {
@@ -119,7 +117,6 @@ export default function EcologyContent() {
         </div>
       </div>
 
-      <Footer />
     </main>
   )
 }

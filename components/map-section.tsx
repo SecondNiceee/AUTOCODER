@@ -1,11 +1,14 @@
 "use client"
 
 import { Phone, Instagram, MapPin } from 'lucide-react'
-import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 
-export function MapSection() {
-  const { language } = useLanguage()
+
+
+interface IHeroSection{
+  language : "ru" | "pl"
+}
+export function MapSection({language} : IHeroSection) {
 
   return (
     <section id="contacts" className="relative py-4 sm:py-5 lg:py-6 overflow-hidden bg-gradient-to-br from-zinc-950 via-black to-zinc-900">

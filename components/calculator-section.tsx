@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 import { Car, Calendar, Wrench, Fuel } from "lucide-react"
 import Image from "next/image"
-import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
@@ -61,8 +60,10 @@ const CALC_TRANSLATIONS = {
   },
 }
 
-export function CalculatorSection() {
-  const { language } = useLanguage()
+interface IHeroSection{
+  language : "ru" | "pl"
+}
+export function CalculatorSection({language} : IHeroSection) {
   const [data, setData] = useState<Brand[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)

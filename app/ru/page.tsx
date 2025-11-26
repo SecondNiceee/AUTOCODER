@@ -21,13 +21,13 @@ export default function Home() {
         />
 
         <div className="absolute inset-0 bg-black/10 z-2 left-0 top-0" />
-        <HeroSection />
+        <HeroSection language="ru" />
       </div>
-      <ServicesSection />
-      <CalculatorSection />
-      <ReviewsSection />
-      <MapSection />
-      <Footer />
+      <ServicesSection language="ru" />
+      <CalculatorSection language="ru" />
+      <ReviewsSection language="ru" />
+      <MapSection language="ru" />
+      <Footer language="ru" />
     </main>
   )
 }

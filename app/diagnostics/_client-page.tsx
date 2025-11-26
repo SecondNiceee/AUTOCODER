@@ -103,7 +103,6 @@ export default function DiagnosticsClientPage() {
         </div>
       </div>
 
-      <Footer />
     </main>
   )
 }

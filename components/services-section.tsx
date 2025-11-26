@@ -1,11 +1,12 @@
 "use client"
 
 import Link from "next/link"
-import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 
-export function ServicesSection() {
-  const { language } = useLanguage()
+interface IHeroSection{
+  language : "ru" | "pl"
+}
+export function ServicesSection({language} : IHeroSection) {
 
   const services = [
     {

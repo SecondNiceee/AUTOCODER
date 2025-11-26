@@ -2,13 +2,14 @@
 
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
-import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 import { usePathname, useRouter } from "next/navigation"
 
-export function MobileMenu() {
+interface IMobileMenu{
+  language : "pl" | "ru"
+}
+export function MobileMenu({language} : IMobileMenu ) {
   const [isOpen, setIsOpen] = useState(false)
-  const { language, setLanguage } = useLanguage()
   const pathname = usePathname()
   const router = useRouter()
 
@@ -33,7 +34,6 @@ export function MobileMenu() {
         router.push(newPath)
       }
     }
-    setLanguage(newLang)
     setIsOpen(false)
   }
 

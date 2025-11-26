@@ -3,13 +3,14 @@
 import { Phone, Instagram } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 import { MobileMenu } from "@/components/mobile-menu"
 import { usePathname, useRouter } from "next/navigation"
 
-export function Header() {
-  const { language, setLanguage } = useLanguage()
+interface IHeader{
+  language : "pl" | "ru"
+}
+export function Header({language} : IHeader) {
   const pathname = usePathname()
   const router = useRouter()
 
@@ -35,7 +36,6 @@ export function Header() {
         router.push(newPath)
       }
     }
-    setLanguage(newLang)
   }
 
   return (
@@ -55,7 +55,7 @@ export function Header() {
               />
             </Link>
 
-            <MobileMenu />
+            <MobileMenu language={language} />
 
             <nav className="hidden md:flex items-center gap-8">
               <button

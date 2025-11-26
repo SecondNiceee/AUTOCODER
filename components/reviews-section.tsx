@@ -5,8 +5,10 @@ import useEmblaCarousel from "embla-carousel-react"
 import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 
-export function ReviewsSection() {
-  const { language } = useLanguage()
+interface IHeroSection{
+  language : "ru" | "pl"
+}
+export function ReviewsSection({language} : IHeroSection) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "center",

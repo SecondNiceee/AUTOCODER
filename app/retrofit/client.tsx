@@ -69,7 +69,6 @@ export default function RetrofitClientPage() {
           </div>
         </div>
 
-        <Footer />
       </div>
     </main>
   )

@@ -2,13 +2,11 @@
 
 import Link from "next/link"
 
-import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
-import Footer from "@/components/footer"
 import ArrowLeft from "@/components/icons/arrow-left"
 
 export default function EcologyPage() {
-  const { language } = useLanguage()
+   const language = "pl"
 
   return (
     <main className="bg-white min-h-screen">
@@ -127,7 +125,7 @@ export default function EcologyPage() {
         </div>
       </div>
 
-      <Footer />
+
     </main>
   )
 }

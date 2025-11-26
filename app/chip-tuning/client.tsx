@@ -1,9 +1,7 @@
 "use client"
 
-import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 
 export function ChipTuningClientPage() {
@@ -132,7 +130,6 @@ export function ChipTuningClientPage() {
         </div>
       </div>
 
-      <Footer />
     </main>
   )
 }

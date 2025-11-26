@@ -3,7 +3,6 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { LanguageProvider } from "@/components/language-context"
 import { Header } from "@/components/header"
 import "./globals.css"
 import { SITE_URL } from "@/lib/constants"
@@ -13,11 +12,12 @@ const inter = Inter({ subsets: ["latin", "cyrillic"] })
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Autocoder – Chip Tuning, Ekologia, Diagnostyka, Naprawa Elektroniki, Retrofit, Konwersja, Kodowanie, Immobiliser, Swap Silnika | Poznań",
+    default:
+      "Autocoder – Chip Tuning, Ekologia, Diagnostyka, Naprawa Elektroniki, Retrofit, Konwersja, Kodowanie, Immobiliser, Swap Silnika | Poznań",
     template: "%s | Autocoder Poznań",
   },
   description:
-  "Autocoder w Poznaniu oferuje kompleksowe usługi motoryzacyjne: chip tuning, usuwanie ekologii (DPF/AdBlue/EGR), diagnostykę, naprawę elektroniki, retrofit, konwersję USA/EU, kodowanie, obsługę immobiliserów i swap silnika. 15 lat doświadczenia w obsłudze Mercedes, BMW i VAG.",
+    "Autocoder w Poznaniu oferuje kompleksowe usługi motoryzacyjne: chip tuning, usuwanie ekologii (DPF/AdBlue/EGR), diagnostykę, naprawę elektroniki, retrofit, konwersję USA/EU, kodowanie, obsługę immobiliserów i swap silnika. 15 lat doświadczenia w obsłudze Mercedes, BMW i VAG.",
   keywords: [
     "chip tuning Poznań",
     "usuwanie ekologii Poznań",
@@ -91,8 +91,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
     languages: {
-      pl: `${SITE_URL}?lang=pl`,
-      ru: `${SITE_URL}?lang=ru`,
+      pl: `${SITE_URL}/`,
+      ru: `${SITE_URL}/ru/`,
     },
   },
   generator: "Next.js",
@@ -103,6 +103,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const language = "pl"
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "AutoRepair",
@@ -128,10 +129,7 @@ export default function RootLayout({
       opens: "09:00",
       closes: "18:00",
     },
-    sameAs: [
-      "https://www.instagram.com/autocoder_pl/",
-      "https://wa.me/48793058343",
-    ],
+    sameAs: ["https://www.instagram.com/autocoder_pl/", "https://wa.me/48793058343"],
     priceRange: "$$",
     aggregateRating: {
       "@type": "AggregateRating",
@@ -179,7 +177,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="pl" className="dark">
+    <html lang="pl">
       <head>
         {/* Favicon — абсолютный путь через public */}
         <link rel="icon" href={`${SITE_URL}/favicon.ico`} />
@@ -209,12 +207,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} antialiased`}>
-        <LanguageProvider>
-          <Header />
-          {children}
-          <WhatsAppButton />
-        </LanguageProvider>
+      <body className={`${inter.className} antialiased dark`}>
+        <Header language={"pl"} />
+        {children}
+        <WhatsAppButton language={"pl"} />
         <Analytics />
       </body>
     </html>

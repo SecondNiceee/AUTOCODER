@@ -126,7 +126,6 @@ export default function CodingContent() {
         </div>
       </div>
 
-      <Footer />
     </main>
   )
 }

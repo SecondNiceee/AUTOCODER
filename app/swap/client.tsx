@@ -95,8 +95,6 @@ export default function SwapClientPage() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </main>
   )
 }

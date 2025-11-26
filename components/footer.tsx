@@ -2,11 +2,13 @@
 
 import { Phone, MapPin, Instagram } from "lucide-react"
 import Link from "next/link"
-import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 
-export function Footer() {
-  const { language } = useLanguage()
+
+interface IHeroSection{
+  language : "ru" | "pl"
+}
+export function Footer({language} : IHeroSection) {
 
   const serviceLinks = [
     { key: "chip_tuning" as const, href: "/chip-tuning" },

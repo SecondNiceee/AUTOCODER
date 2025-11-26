@@ -1,11 +1,12 @@
 "use client"
 
 import Image from "next/image"
-import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 
-export function HeroSection() {
-  const { language } = useLanguage()
+interface IHeroSection{
+  language : "ru" | "pl"
+}
+export function HeroSection({language} : IHeroSection) {
 
   return (
     <section

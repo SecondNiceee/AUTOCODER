@@ -86,7 +86,6 @@ export default function ImmobilizerClientPage() {
         </div>
       </div>
 
-      <Footer />
     </main>
   )
 }
