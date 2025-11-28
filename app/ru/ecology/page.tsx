@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import EcologyPage from "@/app/(pl)/ecology/layout"
+import EcologyPage from "@/client-pages/ecology-client"
 
 export const metadata: Metadata = {
   title: "Экология - DPF, AdBlue, EGR | Удаление Экологических Систем",
@@ -27,5 +27,5 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <EcologyPage />
+  return <EcologyPage language="ru" />
 }

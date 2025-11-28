@@ -6,21 +6,14 @@ import { t } from "@/lib/translations"
 interface IHeroSection{
   language : "ru" | "pl"
 }
-export function HeroSection({language} : IHeroSection) {
+export function  HeroSection({language} : IHeroSection) {
 
   return (
     <section
       id="hero"
-      className="relative flex items-center justify-center overflow-hidden bg-black"
-      style={{ minHeight: "65vh" }}
+      className="relative flex items-center lg:min-h-[92vh] min-h-[65vh] justify-center overflow-hidden bg-black"
+
     >
-      <style jsx>{`
-        @media (min-width: 1024px) {
-          section#hero {
-            min-height: 92vh !important;
-          }
-        }
-      `}</style>
       {/* Content - centered text vertically on screen */}
       <div className="relative flex flex-col gap-9 z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex justify-center">

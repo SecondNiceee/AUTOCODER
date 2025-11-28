@@ -3,11 +3,11 @@
 import Link from "next/link"
 import { t } from "@/lib/translations"
 
-interface IHeroSection{
-  language : "ru" | "pl"
+interface IHeroSection {
+  language: "ru" | "pl"
 }
-export function ServicesSection({language} : IHeroSection) {
-
+export function ServicesSection({ language }: IHeroSection) {
+  console.log(language);
   const services = [
     {
       id: 1,
@@ -100,19 +100,27 @@ export function ServicesSection({language} : IHeroSection) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {services.map((service) => {
+            // Формируем href в зависимости от языка
+            const href =
+              language === "pl"
+                ? service.href // остаётся как есть, например: "/chip-tuning"
+                : `/ru${service.href}`; // добавляем /ru, например: "/ru/chip-tuning"
+
+              console.log(href);
+
             const ServiceCard = (
               <div
                 key={service.id}
                 className="group cursor-pointer flex flex-col items-center text-center p-5 rounded-2xl 
-                           bg-black
-                           backdrop-blur-sm
-                           border border-zinc-800/50
-                           hover:border-[oklch(0.65_0.18_130)]
-                           hover:shadow-[0_0_40px_-10px_oklch(0.65_0.18_130)]
-                           transition-all duration-500 
-                           hover:-translate-y-3
-                           hover:scale-[1.02]
-                           relative overflow-hidden stagger-item"
+                 bg-black
+                 backdrop-blur-sm
+                 border border-zinc-800/50
+                 hover:border-[oklch(0.65_0.18_130)]
+                 hover:shadow-[0_0_40px_-10px_oklch(0.65_0.18_130)]
+                 transition-all duration-500 
+                 hover:-translate-y-3
+                 hover:scale-[1.02]
+                 relative overflow-hidden"
               >
                 {/* Shine effect on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[oklch(0.65_0.18_130)]/0 via-[oklch(0.65_0.18_130)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -122,11 +130,11 @@ export function ServicesSection({language} : IHeroSection) {
 
                 <div
                   className="mb-4 w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center relative z-10 
-                              rounded-xl overflow-hidden
-                              ring-2 ring-zinc-700/80 group-hover:ring-[oklch(0.65_0.18_130)] 
-                              transition-all duration-500
-                              shadow-lg group-hover:shadow-[0_0_30px_-5px_oklch(0.65_0.18_130)]
-                            bg-black p-2"
+                    rounded-xl overflow-hidden
+                    ring-2 ring-zinc-700/80 group-hover:ring-[oklch(0.65_0.18_130)] 
+                    transition-all duration-500
+                    shadow-lg group-hover:shadow-[0_0_30px_-5px_oklch(0.65_0.18_130)]
+                  bg-black p-2"
                 >
                   <img
                     src={service.icon || "/placeholder.svg"}
@@ -151,15 +159,15 @@ export function ServicesSection({language} : IHeroSection) {
                 {/* Subtle bottom accent line */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[oklch(0.65_0.18_130)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-            )
+            );
 
             return service.href ? (
-              <Link key={service.id} href={service.href}>
+              <Link key={service.id} href={href}>
                 {ServiceCard}
               </Link>
             ) : (
               ServiceCard
-            )
+            );
           })}
         </div>
       </div>

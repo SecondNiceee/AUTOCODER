@@ -1,4 +1,4 @@
-import { ChipTuningClientPage } from "@/app/(pl)/chip-tuning/client" // Assuming you'll create this
+import { ChipTuningClientPage } from "@/client-pages/chip-tuning-client" // Assuming you'll create this
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
 
@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 }
 
 export default function ChipTuningPage() {
-  return <ChipTuningClientPage />
+  return <ChipTuningClientPage language="pl" />
 }

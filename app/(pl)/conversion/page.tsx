@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import ConversionClientPage from "./ConversionClientPage"
+import ConversionClientPage from "../../../client-pages/ConversionClientPage"
 
 export const metadata: Metadata = {
   title: "Konwersja USA-EU | Adaptacja Samochodów z USA",
@@ -26,5 +26,5 @@ export const metadata: Metadata = {
 }
 
 export default function ConversionPage() {
-  return <ConversionClientPage />
+  return <ConversionClientPage language="pl" />
 }

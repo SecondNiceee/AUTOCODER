@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import DiagnosticsClientPage from "@/app/(pl)/diagnostics/_client-page"
+import DiagnosticsClientPage from "@/client-pages/diagnostic-client"
 
 export const metadata: Metadata = {
   title: "Диагностика Автомобилей | Дилерское Оборудование | Mercedes, BMW, VAG",
@@ -28,5 +28,5 @@ export const metadata: Metadata = {
 }
 
 export default function DiagnosticsPage() {
-  return <DiagnosticsClientPage />
+  return <DiagnosticsClientPage language="ru" />
 }

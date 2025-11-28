@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import RetrofitClientPage from "./client"
+import RetrofitClientPage from "../../../client-pages/retrofit-client"
 
 export const metadata: Metadata = {
   title: "Doposażenie (Retrofit) | Kamera, Ambient, CarPlay, HUD",
@@ -29,5 +29,5 @@ export const metadata: Metadata = {
 }
 
 export default function RetrofitPage() {
-  return <RetrofitClientPage />
+  return <RetrofitClientPage language="pl" />
 }

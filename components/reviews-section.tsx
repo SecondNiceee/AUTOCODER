@@ -1,14 +1,13 @@
 "use client"
-import { Star, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Star, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState, useEffect, useCallback } from "react"
 import useEmblaCarousel from "embla-carousel-react"
-import { useLanguage } from "@/components/language-context"
 import { t } from "@/lib/translations"
 
-interface IHeroSection{
-  language : "ru" | "pl"
+interface IHeroSection {
+  language: "ru" | "pl"
 }
-export function ReviewsSection({language} : IHeroSection) {
+export function ReviewsSection({ language }: IHeroSection) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "center",
@@ -23,8 +22,10 @@ export function ReviewsSection({language} : IHeroSection) {
     {
       id: 1,
       name: "Andrew Kisialiou",
-      text_ru: "Пришил мне темпомат и камеру заднего вида за 10 минут. Я искал кто это сделает 3 дня. Ничего не спрашивал просто сказал конечно можно. Цены ок. Хороший дядька.",
-      text_pl: "Zainstalował mi tempomat i kamerę cofania w 10 minut. Szukałem kogoś kto to zrobi przez 3 dni. Nic nie pytał, po prostu powiedział oczywiście, że można. Ceny ok. Fajny gość.",
+      text_ru:
+        "Пришил мне темпомат и камеру заднего вида за 10 минут. Я искал кто это сделает 3 дня. Ничего не спрашивал просто сказал конечно можно. Цены ок. Хороший дядька.",
+      text_pl:
+        "Zainstalował mi tempomat i kamerę cofania w 10 minut. Szukałem kogoś kto to zrobi przez 3 dni. Nic nie pytał, po prostu powiedział oczywiście, że można. Ceny ok. Fajny gość.",
       rating: 5,
       car: "Mercedes 906",
       onlyPolish: false,
@@ -32,8 +33,10 @@ export function ReviewsSection({language} : IHeroSection) {
     {
       id: 2,
       name: "Nataliia Oshyievska",
-      text_ru: "Дмитрий, профессионал с большой буквы! Редко встретишь такого мастера, который разбирается так классно с мозгами машины и находит правильно причину поломки.",
-      text_pl: "Dmitrij, profesjonalista z dużej litery! Rzadko spotyka się takiego majstra, który tak dobrze rozumie elektronikę samochodu i prawidłowo znajduje przyczynę awarii.",
+      text_ru:
+        "Дмитрий, профессионал с большой буквы! Редко встретишь такого мастера, который разбирается так классно с мозгами машины и находит правильно причину поломки.",
+      text_pl:
+        "Dmitrij, profesjonalista z dużej litery! Rzadko spotyka się takiego majstra, który tak dobrze rozumie elektronikę samochodu i prawidłowo znajduje przyczynę awarii.",
       rating: 5,
       car: "",
       onlyPolish: false,
@@ -41,8 +44,10 @@ export function ReviewsSection({language} : IHeroSection) {
     {
       id: 3,
       name: "Tomasz Czerepowicz",
-      text_ru: "Moim zdaniem najlepszy spec od elektroniki w Mercedesach i BMW w okolicy. Wykrył usterkę zaciętego dachu w R230 gdy inni rozłożyli ręce. W BMW g21 dołożył mi kamerkę cofania. W BMW e 92 byłem u niego na zdjęciu kagańca. Na pewno jeszcze nie raz skorzystam",
-      text_pl: "Moim zdaniem najlepszy spec od elektroniki w Mercedesach i BMW w okolicy. Wykrył usterkę zaciętego dachu w R230 gdy inni rozłożyli ręce. W BMW g21 dołożył mi kamerkę cofania. W BMW e 92 byłem u niego na zdjęciu kagańca. Na pewno jeszcze nie raz skorzystam",
+      text_ru:
+        "Moim zdaniem najlepszy spec od elektroniki w Mercedesach i BMW w okolicy. Wykrył usterkę zaciętego dachu w R230 gdy inni rozłożyli ręce. W BMW g21 dołożył mi kamerkę cofania. W BMW e 92 byłem u niego na zdjęciu kagańca. Na pewno jeszcze nie raz skorzystam",
+      text_pl:
+        "Moim zdaniem najlepszy spec od elektroniki w Mercedesach i BMW w okolicy. Wykrył usterkę zaciętego dachu w R230 gdy inni rozłożyli ręce. W BMW g21 dołożył mi kamerkę cofania. W BMW e 92 byłem u niego na zdjęciu kagańca. Na pewno jeszcze nie raz skorzystam",
       rating: 5,
       car: "Mercedes R230, BMW G21, BMW E92",
       onlyPolish: true,
@@ -106,15 +111,13 @@ export function ReviewsSection({language} : IHeroSection) {
   const currentReview = reviews[selectedIndex]
 
   return (
-    <section className="py-10 sm:py-14 px-4 bg-gradient-to-b from-zinc-950 via-black to-zinc-950 section-fade-in" id="reviews">
+    <section className="py-10 sm:py-14 px-4 bg-gradient-to-b from-zinc-950 via-black to-zinc-950" id="reviews">
       <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-8 sm:mb-10 fade-in-down">
+        <div className="text-center mb-8 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-3 px-4">
             {t("our_reviews", language)}
           </h2>
-          <p className="text-gray-400 text-sm sm:text-base px-4">
-            {t("reviews_subtitle", language)}
-          </p>
+          <p className="text-gray-400 text-sm sm:text-base px-4">{t("reviews_subtitle", language)}</p>
         </div>
 
         <div className="overflow-hidden" ref={emblaRef}>
@@ -122,7 +125,7 @@ export function ReviewsSection({language} : IHeroSection) {
             {reviews.map((review) => (
               <div key={review.id} className="flex-[0_0_100%] min-w-0">
                 {/* Main Review Card */}
-                <div className="bg-gradient-to-br from-zinc-900 via-zinc-900 to-black border border-zinc-800 rounded-2xl p-6 sm:p-8 mb-6 shadow-2xl fade-in-up">
+                <div className="bg-gradient-to-br from-zinc-900 via-zinc-900 to-black border border-zinc-800 rounded-2xl p-6 sm:p-8 mb-6 shadow-2xl">
                   {/* Stars */}
                   <div className="flex justify-center gap-1 mb-4 sm:mb-6">
                     {[...Array(review.rating)].map((_, i) => (
@@ -132,7 +135,7 @@ export function ReviewsSection({language} : IHeroSection) {
 
                   {/* Review Text */}
                   <p className="text-white text-base sm:text-lg md:text-xl text-center mb-4 sm:mb-6 min-h-20 flex items-center justify-center leading-relaxed">
-                    "{review.onlyPolish ? review.text_pl : (language === 'ru' ? review.text_ru : review.text_pl)}"
+                    "{review.onlyPolish ? review.text_pl : language === "ru" ? review.text_ru : review.text_pl}"
                   </p>
 
                   {/* Reviewer Info */}
@@ -187,7 +190,7 @@ export function ReviewsSection({language} : IHeroSection) {
         </div>
 
         {/* Google Reviews Button */}
-        <div className="flex flex-col items-center gap-4 fade-in-up">
+        <div className="flex flex-col items-center gap-4">
           <a
             href="https://www.google.com/search?sca_esv=f5f7bfe5ec8d5861&hl=ru&authuser=0&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E-nqE6MaTpKbqq7QTEYmkykV5ZBtJoux2ITaEdJ88g3RlLz2m2mnXqN09jEMXuazpCt-sQrRoSeoBz610i4C8rzpEibt&q=Autocoder+%D0%9E%D1%82%D0%B7%D1%8B%D0%B2%D1%8B&sa=X&ved=2ahUKEwiZ-ZebyuiQAxXvOBAIHetiECwQ0bkNegQIIRAD&biw=1528&bih=738&dpr=1.25"
             target="_blank"

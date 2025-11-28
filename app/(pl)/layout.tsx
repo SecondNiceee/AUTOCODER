@@ -7,6 +7,7 @@ import { LanguageProvider } from "@/components/language-context"
 import { Header } from "@/components/header"
 import "../globals.css"
 import { SITE_URL } from "@/lib/constants"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] })
 
@@ -211,11 +212,11 @@ x
       </head>
       <body className={`${inter.className} antialiased`}>
         <LanguageProvider>
+          <ScrollToTop />
           <Header language="pl" />
           {children}
           <WhatsAppButton language="pl" />
         </LanguageProvider>
-        <Analytics />
       </body>
     </html>
   )

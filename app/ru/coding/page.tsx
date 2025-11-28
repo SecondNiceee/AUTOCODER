@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
 import CodingContent from "./coding-content"
+import CodingClientPage from "@/client-pages/coding-client"
 
 export const metadata: Metadata = {
   title: "Кодирование и Программирование Авто | Активация Функций, Синхронизация | Autocoder Познань",
@@ -46,6 +47,6 @@ export const metadata: Metadata = {
 export default function CodingPage() {
 
   return (
-    <CodingContent />
+    <CodingClientPage language="ru" />
   )
 }

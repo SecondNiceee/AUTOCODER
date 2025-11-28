@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import ImmobilizerClientPage from "@/app/(pl)/immobilizer/immobilizer-client"
+import ImmobilizerClientPage from "@/client-pages/immobilizer-client"
 
 export const metadata: Metadata = {
   title: "Ключи и Иммобилайзер | Программирование Ключей | Mercedes, BMW, VAG",
@@ -27,5 +27,5 @@ export const metadata: Metadata = {
 }
 
 export default function ImmobilizerPage() {
-  return <ImmobilizerClientPage />
+  return <ImmobilizerClientPage language="ru" />
 }

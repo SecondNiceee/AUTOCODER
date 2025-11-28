@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import CodingClientPage from "./client"
+import CodingClientPage from "../../../client-pages/coding-client"
 
 export const metadata: Metadata = {
   title: "Kodowanie i Programowanie Samochodów | Mercedes, BMW, VAG",
@@ -27,5 +27,5 @@ export const metadata: Metadata = {
 }
 
 export default function CodingPage() {
-  return <CodingClientPage />
+  return <CodingClientPage language="pl" />
 }

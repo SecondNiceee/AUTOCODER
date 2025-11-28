@@ -4,12 +4,10 @@ import { Phone, MapPin, Instagram } from "lucide-react"
 import Link from "next/link"
 import { t } from "@/lib/translations"
 
-
-interface IHeroSection{
-  language : "ru" | "pl"
+interface IHeroSection {
+  language: "ru" | "pl"
 }
-export function Footer({language} : IHeroSection) {
-
+export function Footer({ language }: IHeroSection) {
   const serviceLinks = [
     { key: "chip_tuning" as const, href: "/chip-tuning" },
     { key: "ecology" as const, href: "/ecology" },
@@ -22,17 +20,24 @@ export function Footer({language} : IHeroSection) {
     { key: "swap" as const, href: "/swap" },
   ] as const
 
+  // Функция для формирования языкового пути
+  const getLocalizedHref = (href: string): string => {
+    return language === "pl" ? href : `/ru${href}`
+  }
+
   return (
     <footer className="bg-zinc-950 border-t border-zinc-800 py-4">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Services Column */}
           <div>
-            <h3 className="text-lime-500 font-bold text-base mb-3 uppercase">{t("services_header", language)}</h3>
+            <h3 className="text-lime-500 font-bold text-base mb-3 uppercase">
+              {t("services_header", language)}
+            </h3>
             <ul className="space-y-2">
               {serviceLinks.map((service) => (
                 <li key={service.key}>
-                  <Link href={service.href}>
+                  <Link href={getLocalizedHref(service.href)}>
                     <span className="text-white/70 hover:text-lime-500 transition-colors text-sm cursor-pointer">
                       {t(service.key, language)}
                     </span>
@@ -44,7 +49,9 @@ export function Footer({language} : IHeroSection) {
 
           {/* Contact Column */}
           <div>
-            <h3 className="text-lime-500 font-bold text-base mb-3 uppercase">{t("contacts_header", language)}</h3>
+            <h3 className="text-lime-500 font-bold text-base mb-3 uppercase">
+              {t("contacts_header", language)}
+            </h3>
             <div className="space-y-3">
               <a
                 href="tel:+48793058343"
@@ -75,7 +82,9 @@ export function Footer({language} : IHeroSection) {
 
           {/* Address Column */}
           <div>
-            <h3 className="text-lime-500 font-bold text-base mb-3 uppercase">{t("address_header", language)}</h3>
+            <h3 className="text-lime-500 font-bold text-base mb-3 uppercase">
+              {t("address_header", language)}
+            </h3>
             <a
               href="https://maps.app.goo.gl/DddQE9PReFShFQ1oj"
               target="_blank"

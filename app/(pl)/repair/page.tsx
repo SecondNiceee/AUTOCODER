@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import RepairClientPage from "./client"
+import RepairClientPage from "../../../client-pages/repair-client"
 
 export const metadata: Metadata = {
   title: "Naprawa Elektroniki Samochodowej | ECU, TCU, Moduły",
@@ -27,5 +27,6 @@ export const metadata: Metadata = {
 }
 
 export default function RepairPage() {
-  return <RepairClientPage />
+  return <RepairClientPage language="pl" />
 }
+

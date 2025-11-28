@@ -234,11 +234,9 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <LanguageProvider>
           <Header language="ru" />
-          
           {children}
           <WhatsAppButton language="ru" />
         </LanguageProvider>
-        <Analytics />
       </body>
     </html>
   )

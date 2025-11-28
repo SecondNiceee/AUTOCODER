@@ -1,12 +1,14 @@
+"use client"
 
-
-
-import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { t } from "@/lib/translations"
+import { useLanguage } from "@/utils/useLanguage";
+import Link from "next/link";
 
-export function ChipTuningClientPage() {
-  const language = "ru";
+
+export function ChipTuningClientPage({language} : {language : "ru" | "pl"}) {
+  const prefix = useLanguage();
+
   return (
     <main className="bg-white min-h-screen">
       {/* Animated grid pattern background */}
@@ -31,7 +33,7 @@ export function ChipTuningClientPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Back Button */}
           <Link
-            href="/"
+            href={`/${prefix}`}
             className="inline-flex items-center gap-2 text-[oklch(0.65_0.18_130)] hover:text-black transition-colors duration-300 mb-8 group"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
@@ -129,6 +131,7 @@ export function ChipTuningClientPage() {
           </div>
         </div>
       </div>
+
     </main>
   )
 }

@@ -2,19 +2,12 @@
 const nextConfig = {
   output: "export",
 
-  typescript: {
-    ignoreBuildErrors: true,
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 
-  turbopack: {},
-
-  experimental: {
-    optimizePackageImports: [
-      'lucide-react',
-      'class-variance-authority',
-      'clsx',
-      'tailwind-merge'
-    ],
+  typescript: {
+    ignoreBuildErrors: true,
   },
 
   compress: true,

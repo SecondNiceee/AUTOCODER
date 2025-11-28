@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { SITE_URL } from "@/lib/constants"
-import SwapClientPage from "./client"
+import SwapClientPage from "@/client-pages/swap-client"
 
 export const metadata: Metadata = {
   title: "Свап Двигателя и Коробки Передач | OM606, M57, 7G-Tronic",
@@ -45,5 +45,5 @@ export const metadata: Metadata = {
 }
 
 export default function SwapPage() {
-  return <SwapClientPage />
+  return <SwapClientPage language="ru" />
 }

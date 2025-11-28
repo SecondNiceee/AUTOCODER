@@ -1,8 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Fixed dark variant syntax */
-@variant dark (.dark &);
+@custom-variant dark (&:is(.dark *));
 
 :root {
   /* Updated color scheme with green tones instead of blue accents */
@@ -39,7 +38,6 @@
   --sidebar-accent-foreground: oklch(0.98 0 0);
   --sidebar-border: oklch(0.2 0 0);
   --sidebar-ring: oklch(0.65 0.18 130);
-  /* Removed --header-blue variable as it's no longer used */
 }
 
 .dark {
@@ -126,138 +124,5 @@
   }
   body {
     @apply bg-background text-foreground;
-  }
-}
-
-/* Enhanced animations with staggered entrance effects for all blocks */
-@layer components {
-  /* Existing animations */
-  @keyframes slideInFromRight {
-    from {
-      opacity: 0;
-      transform: translateX(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slideInFromLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  /* New entrance animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes zoomIn {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  /* Staggered animations for grid items */
-  @keyframes staggerFadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .slide-in-right {
-    animation: slideInFromRight 0.6s ease-out;
-  }
-
-  .slide-in-left {
-    animation: slideInFromLeft 0.6s ease-out;
-  }
-
-  .scale-in {
-    animation: scaleIn 0.5s ease-out;
-  }
-
-  .fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
-  }
-
-  .fade-in-down {
-    animation: fadeInDown 0.6s ease-out;
-  }
-
-  .zoom-in {
-    animation: zoomIn 0.5s ease-out;
-  }
-
-  /* Staggered item animations for service cards and other grid items */
-  .stagger-item {
-    animation: staggerFadeInUp 0.6s ease-out backwards;
-  }
-
-  .stagger-item:nth-child(1) { animation-delay: 0.1s; }
-  .stagger-item:nth-child(2) { animation-delay: 0.2s; }
-  .stagger-item:nth-child(3) { animation-delay: 0.3s; }
-  .stagger-item:nth-child(4) { animation-delay: 0.4s; }
-  .stagger-item:nth-child(5) { animation-delay: 0.5s; }
-  .stagger-item:nth-child(6) { animation-delay: 0.6s; }
-  .stagger-item:nth-child(7) { animation-delay: 0.7s; }
-  .stagger-item:nth-child(8) { animation-delay: 0.8s; }
-  .stagger-item:nth-child(9) { animation-delay: 0.9s; }
-
-  /* Section entrance animations */
-  .section-fade-in {
-    animation: fadeInUp 0.8s ease-out;
-  }
-
-  /* Added flying-letter class for AUTOCODER text effect */
-  .flying-letter {
-    color: transparent;
-    text-shadow: 0 0 0 white, 0 0 0 white, 0 0 0 white;
   }
 }
